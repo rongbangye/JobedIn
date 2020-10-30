@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS jobedin_db;
+
+CREATE DATABASE jobedin_db;
