@@ -4,14 +4,7 @@ const { Post, User } = require("../../models");
 // Get all posts
 router.get("/", (req, res) => {
   Post.findAll({
-    attributes: [
-      "id",
-      "title",
-      "description",
-      "post_url",
-      "keywords",
-      "created_at",
-    ],
+    attributes: ["id", "title", "content", "created_at", "updated_at"],
     order: [["created_at", "DESC"]],
     include: [
       {
@@ -33,14 +26,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: [
-      "id",
-      "title",
-      "description",
-      "post_url",
-      "keywords",
-      "created_at",
-    ],
+    attributes: ["id", "title", "content", "created_at", "updated_at"],
     include: [
       {
         model: User,
@@ -65,12 +51,37 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
   Post.create({
     title: req.body.title,
-    description: req.body.description,
-    post_url: req.body.post_url,
+    content: req.body.content,
     user_id: req.body.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
+      res.status(500).json(err);
+    });
+});
+
+// Edit a Post
+router.put("/:id", (req, res) => {
+  Post.update(
+    {
+      title: req.body.title,
+      content: req.body.content,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res.status(404).json({ message: "No post found with this id" });
+        return;
+      }
+      res.json(dbPostData);
+    })
+    .catch((err) => {
+      console.log(err);
       res.status(500).json(err);
     });
 });

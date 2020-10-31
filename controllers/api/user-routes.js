@@ -42,7 +42,7 @@ router.post("/", (req, res) => {
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
-    type: req.body.type,
+    picture_url: req.body.picture_url,
   })
     .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
