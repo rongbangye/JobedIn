@@ -38,12 +38,10 @@ User.init(
         len: [4],
       },
     },
-    type: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    picture: {
-      type: DataTypes.STRING,
+    picture_url: {
+        type: DataTypes.STRING,
+            defaultValue: '',
+            allowNull: false 
     }
   },
   {

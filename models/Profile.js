@@ -23,6 +23,14 @@ Profile.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    industry: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    interest: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
