@@ -35,10 +35,16 @@ Post.hasMany(Comment, {
   onDelete: "SET NULL",
 });
 
-User.belongsTo(Profile, {
-  foreignKey: "user_id",
-  onDelete: "SET NULL",
-});
+/**
+ * Comment out below code
+ * Because received error with this:
+ * "Cyclic dependency found. user is dependent of itself"
+ *  */
+
+// User.belongsTo(Profile, {
+//   foreignKey: "user_id",
+//   onDelete: "SET NULL",
+// });
 
 Profile.belongsTo(User, {
   foreignKey: "user_id",
