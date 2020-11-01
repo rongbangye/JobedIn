@@ -72,14 +72,14 @@ Post.hasMany(Comment, {
  * "Cyclic dependency found. user is dependent of itself"
  *  */
 
-// User.belongsTo(Profile, {
-//   foreignKey: "user_id",
-//   onDelete: "SET NULL",
-// });
-
-Profile.belongsTo(User, {
+User.hasOne(Profile, {
   foreignKey: "user_id",
   onDelete: "SET NULL",
 });
+
+// Profile.hasOne(User, {
+//   foreignKey: "user_id",
+//   onDelete: "SET NULL",
+// });
 
 module.exports = { User, Post, Comment, Profile, Vote };
