@@ -1,16 +1,17 @@
-<div class="container">
-    <div>
-        <h3>Welcome</h3>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, alias?</p>
+<div class="welcome-container">
+    <div class="welcome-page">
+        <span class="brand-logo brand-logo-big"><i class="fab fa-connectdevelop"></i></span>
+        <h1>Welcome</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur<br> adipisicing elit. Possimus, alias?</p>
     </div>
     <form class="signup-form">
         <div class="logo">
 
-            <a href="/"><span>TB</span></a>
+             <span class="brand-logo-small"><i class="fab fa-connectdevelop"></i></span>
 
         </div>
         <h2>Sign up</h2>
-        <hr>
+        {{!-- <hr> --}}
         <div>
             <label for="username-signup">Username</label>
             <input type="text" id="username-signup" />
@@ -27,9 +28,9 @@
             <button type="submit">Sign up</button>
         </div>
         <div class="form-link">
-            <a href="/login">Sign in ?</a>
+            <a href="/login">Already have an account ?</a>
         </div>
-    </form>
+    </form> 
 </div>
 
 <script src="/javascript/signup.js"></script>

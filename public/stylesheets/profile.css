@@ -1,0 +1,67 @@
+.row {
+  margin: 0 3rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.profile {
+  width: 65%;
+  border: 1px solid rgb(172, 172, 172);
+
+  margin: 3rem 0rem;
+}
+.profile-image-container {
+  background-image: url("../assets/image/profile-bg.png");
+  background-size: cover;
+  height: 35vh;
+  width: 100%;
+}
+.profile-info-container {
+  padding: 1rem 2rem;
+}
+.profile-pic {
+  background-image: url("../assets/image/profile-pic.jpg");
+  background-size: cover;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-top: -6rem;
+  /* margin-left: 2rem; */
+}
+.profile-info-container h4 {
+  color: rgb(71, 71, 71);
+  margin: 0.9rem 0;
+}
+.profile-info-container p {
+  color: rgb(71, 71, 71);
+}
+.profile-info {
+  display: flex;
+  justify-content: space-between;
+}
+.btn-edit-profile {
+  margin-top: -2rem;
+  color: rgb(29, 135, 177);
+  font-size: 1.2rem;
+  border-radius: 50%;
+  height: 2.3rem;
+  width: 2.3rem;
+  padding: 0.3rem;
+  text-align: center;
+  background-color: rgb(220, 228, 235);
+}
+.btn-edit-profile:hover {
+  background-color: rgb(182, 201, 218);
+}
+.jobs {
+  width: 32%;
+  margin: 3rem 0rem;
+  background-color: rgb(210, 242, 255);
+}
+
+/* ===================  PROFILE - FORM  ============================================= */
+.profile-form {
+  width: 100%;
+}
