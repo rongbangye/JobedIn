@@ -3,7 +3,7 @@ const Post = require("./Post");
 const User = require("./User");
 const Comment = require("./Comment");
 const Profile = require("./Profile");
-const Like = require("./Like");
+const Vote = require("./Vote");
 
 // create associations
 User.hasMany(Post, {
@@ -13,6 +13,37 @@ User.hasMany(Post, {
 Post.belongsTo(User, {
   foreignKey: "user_id",
   onDelete: "SET NULL",
+});
+
+User.belongsToMany(Post, {
+  through: Vote,
+  as: "voted_posts",
+  foreignKey: "user_id",
+});
+
+Post.belongsToMany(User, {
+  through: Vote,
+  as: "voted_posts",
+  foreignKey: "post_id",
+});
+
+Vote.belongsTo(Post, {
+  foreignKey: "post_id",
+  onDelete: "SET NULL",
+});
+
+// Added Vote belongsTo User
+Vote.belongsTo(User, {
+  foreignKey: "user_id",
+});
+
+Post.hasMany(Vote, {
+  foreignKey: "post_id",
+});
+
+// Added User hasMany Vote
+User.hasMany(Vote, {
+  foreignKey: "user_id",
 });
 
 Comment.belongsTo(User, {
@@ -35,23 +66,20 @@ Post.hasMany(Comment, {
   onDelete: "SET NULL",
 });
 
-User.belongsTo(Profile, {
+/**
+ * Comment out below code
+ * Because received error with this:
+ * "Cyclic dependency found. user is dependent of itself"
+ *  */
+
+User.hasOne(Profile, {
   foreignKey: "user_id",
   onDelete: "SET NULL",
 });
 
-Profile.belongsTo(User, {
-  foreignKey: "user_id",
-  onDelete: "SET NULL",
-});
+// Profile.hasOne(User, {
+//   foreignKey: "user_id",
+//   onDelete: "SET NULL",
+// });
 
-Post.hasMany(Like, {
-  foreignKey: "post_id",
-});
-
-Like.belongsTo(Post, {
-  foreignKey: "post_id",
-  onDelete: "SET NULL",
-});
-
-module.exports = { User, Post, Comment, Profile, Like };
+module.exports = { User, Post, Comment, Profile, Vote };

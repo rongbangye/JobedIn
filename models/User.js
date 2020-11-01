@@ -39,10 +39,10 @@ User.init(
       },
     },
     picture_url: {
-        type: DataTypes.STRING,
-            defaultValue: '',
-            allowNull: false 
-    }
+      type: DataTypes.STRING,
+      defaultValue: "",
+      allowNull: false,
+    },
   },
   {
     hooks: {
