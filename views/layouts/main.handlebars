@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JIn</title>
+    {{!-- <!-- fontawsome - icons- --> --}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+
+    {{!-- <!- google-fonts  --> --}}
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300;400;500&family=Raleway:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <h1>
+                    <a href="/"> <span class="brand-logo brand-logo-small"><i class="fab fa-connectdevelop"></i></span>
+                    </a>JobedIn
+                </h1>
+            </div>
+
+            <nav>
+                <a href="/">Home</a>
+                {{#if loggedIn}}
+                <a href="/dashboard">Profile</a>
+                <button id="logout" class="btn-no-style">Log Out</button>
+                {{else}}
+                <a href="/login" id="login">Login</a>
+                {{/if}}
+            </nav>
+        </header>
+        <main>
+            {{{ body }}}
+        </main>
+        <footer>
+            <div>TB</div>
+        </footer>
+    </div>
+
+    {{#if loggedIn}}
+    <script src="/javascript/logout.js"></script>
+    {{/if}}
+</body>
+
+</html>

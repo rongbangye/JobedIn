@@ -16,7 +16,7 @@ job_posts
 - title *
 - description *
 - post_url *
-- keywords * 
+- keywords *
 - user_id *
 - created_at
 - updated_at
@@ -37,7 +37,12 @@ likes
 
 profile
 - id *
+- firstname
+- lastname
 - skills *
 - education *
 - experience *
-- user_id -->
+- industry
+- interest
+- user_id
+-->

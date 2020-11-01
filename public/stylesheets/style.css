@@ -1,0 +1,543 @@
+:root {
+  --primary-color: #0299d1;
+  --secondary-color: #b9d0d3;
+  --tertiary-color: #39a6b2;
+  --text-color: #56a5af;
+  --heading-color: #3a3f42;
+  --light-heading: #c1e2e2;
+  --bgc-one: #0e2138;
+  --bgc-two: #467dc1;
+  --bgc-three: #acd1ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: #333;
+  font-size: 16px;
+  background-color: var(--primary-color);
+}
+li {
+  list-style: none;
+}
+ul {
+  padding-inline-start: 0 !important;
+}
+p {
+  color: rgb(255, 255, 255);
+}
+
+a {
+  text-decoration: none;
+  color: #3c74c4;
+  /* font-weight: bold; */
+  transition: color 0.1s;
+}
+
+a:hover {
+  color: #3486eb;
+}
+
+button {
+  background-color: #225ca3;
+  border: 0;
+  padding: 0.5rem 1.3rem;
+  color: white;
+  font-weight: bold;
+  transition: background-color 0.1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #3486eb;
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+}
+
+textarea,
+input {
+  padding: 0.5%;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+  border: 1px solid #3486eb;
+}
+
+textarea {
+  min-width: 40%;
+  min-height: 100px;
+}
+
+form > div {
+  margin-bottom: 2%;
+}
+
+form label {
+  display: block;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 1rem;
+  background-color: var(--bgc-one);
+  color: white;
+}
+.logo {
+}
+.logo a {
+  color: rgb(111, 201, 243);
+  align-content: center;
+  align-items: center;
+  vertical-align: middle;
+}
+/* .logo span {   
+  color: var(--bgc-one);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  background: rgb(255, 255, 255);
+  padding: 0.4rem;
+  margin-right: 0.4rem;
+} */
+
+header h1 {
+  font-size: 1em;
+}
+header nav a {
+  color: rgb(223, 227, 230);
+  margin-right: 2rem;
+  font-size: 0.9rem;
+}
+#logout {
+  color: rgb(71, 71, 71) !important;
+  border-radius: 0.2rem;
+  background-color: rgb(46, 224, 126);
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+#login {
+  color: rgb(71, 71, 71) !important;
+  border-radius: 0.2rem;
+  background-color: rgb(46, 224, 126);
+  padding: 0.4rem 1rem;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+main {
+  flex: 1;
+  /* padding: 2% 14%; */
+}
+.container {
+  background: rgb(112, 224, 253);
+  background: linear-gradient(
+    189deg,
+    rgba(112, 224, 253, 1) 0%,
+    rgb(9, 152, 196) 100%
+  );
+
+  background: rgb(0, 159, 204);
+  background: linear-gradient(270deg, rgba(0, 159, 204, 1) 0%, #0299d1 100%);
+  height: 91vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+.welcome-page {
+  align-self: center;
+  padding: 0 4rem;
+  text-align: center;
+}
+.welcome-page p {
+  font-family: "Raleway";
+  color: rgb(231, 231, 231);
+}
+.welcome-page h1 {
+  color: white;
+  font-family: "Raleway";
+  font-family: "Nunito";
+  font-weight: lighter;
+}
+.brand-logo {
+  color: rgb(211, 239, 255);
+  /* opacity: .5; */
+}
+.brand-logo-big {
+  font-size: 4rem;
+}
+.brand-logo-small {
+  font-size: 2rem;
+}
+
+.btn-no-style {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: #225ca3;
+  font-size: 100%;
+  font-weight: bold;
+  transition: color 0.1s;
+  margin-left: 16px;
+}
+
+.btn-no-style:hover {
+  background: none;
+  color: #3486eb;
+}
+
+.delete-post-btn {
+  background-color: #d41414;
+}
+
+.delete-post-btn:hover {
+  background-color: #ff643d;
+}
+
+.post {
+  margin-bottom: 2%;
+  line-height: 150%;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0px 0px 6px -1px rgb(137, 137, 137);
+}
+
+.post .title p {
+  background-color: rgb(81, 152, 140);
+  font-style: italic;
+  font-size: 90%;
+  color: #7d7d7d;
+}
+.post .title {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bgc-one);
+  padding: 0.4rem 1rem;
+  color: white;
+  /* border-radius: 0.5rem; */
+}
+.post .title .title-info {
+  color: rgb(207, 220, 230) !important;
+  font-size: 0.7rem;
+}
+#title-info {
+  color: rgb(216, 216, 216) !important;
+  font-size: 0.9rem;
+}
+.title .title-heading a {
+  color: white !important;
+}
+.post .meta {
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  /* border-radius: 0.5rem; */
+}
+.create-new-post {
+  margin: 0 2rem;
+  /* border:1px solid rgb(182, 182, 182); */
+  box-shadow: 0 0 10px 1px rgba(187, 189, 196, 0.418);
+
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+.your-posts {
+  margin: 1rem;
+  padding: 0;
+}
+.your-posts h2 {
+  margin-left: 1rem;
+}
+.edit-link {
+  display: block;
+  margin: 1rem;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.login-form {
+  background-color: rgb(240, 245, 250);
+  max-height: 70vh;
+  width: 30%;
+  padding: 2rem 3rem;
+  margin: 2rem;
+  align-self: center;
+  /* box-shadow: 0 0 10px 1px rgb(42, 192, 238); */
+  border-top-left-radius: 10% 50%;
+  border-bottom-left-radius: 10% 50%;
+}
+.login-form .logo {
+  text-align: center;
+}
+.login-form .logo span {
+  color: rgb(164, 165, 165);
+  border-radius: 50%;
+  /* width: 50%; */
+  height: 3rem;
+  background: rgb(226, 226, 226);
+  padding: 0.4rem;
+  /* margin-right: 0.4rem; */
+  text-align: center;
+}
+.login-form h2 {
+  margin: auto;
+  text-align: center;
+  color: var(--primary-color);
+  color: rgb(129, 129, 129);
+}
+.login-form div {
+  margin: 1rem;
+  /* width: 100%; */
+}
+.login-form .form-button {
+  text-align: center;
+}
+.login-form .form-link {
+  text-align: center;
+}
+.login-form div a {
+  color: rgb(167, 162, 162);
+  font-size: 0.9rem;
+  text-align: center;
+}
+.login-form div button {
+  background-color: var(--primary-color);
+  width: 60%;
+  padding: 0.4rem 1.3rem;
+  color: rgb(255, 255, 255);
+  border-radius: 100px;
+}
+.login-form div input {
+  width: 100%;
+  padding: 0.4rem 1rem;
+  margin: 0.3rem 0;
+}
+.login-form label {
+  color: rgb(146, 146, 146);
+  font-size: 0.8rem;
+}
+
+.signup-form {
+  /* background-color: rgb(184, 205, 226); */
+  background: rgb(34, 92, 163);
+  background: linear-gradient(
+    207deg,
+    rgba(34, 92, 163, 1) 0%,
+    rgba(71, 138, 228, 1) 100%
+  );
+  width: 40%;
+  padding: 2rem 2rem;
+  margin: 2rem auto;
+}
+.signup-form .logo {
+  text-align: center;
+}
+.signup-form .logo span {
+  color: var(--bgc-one);
+  border-radius: 50%;
+  /* width: 50%; */
+  height: 3rem;
+  background: rgb(255, 255, 255);
+  padding: 0.4rem;
+  /* margin-right: 0.4rem; */
+  text-align: center;
+}
+.signup-form h2 {
+  margin: auto;
+  text-align: center;
+  color: rgb(241, 246, 251);
+}
+.signup-form div {
+  margin: 1rem;
+  /* width: 100%; */
+}
+.signup-form .form-button {
+  text-align: center;
+}
+.signup-form .form-link {
+  text-align: center;
+}
+.signup-form div a {
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.signup-form div button {
+  background-color: rgb(46, 224, 126);
+  width: 70%;
+  padding: 0.4rem 1.3rem;
+  color: rgb(50, 50, 50);
+}
+.signup-form div input {
+  width: 100%;
+  padding: 0.4rem 1rem;
+  margin: 0.5rem 0;
+}
+.signup-form label {
+  color: rgb(179, 213, 255);
+}
+
+.comment-form {
+  margin-bottom: 5%;
+}
+.comments {
+  background-color: rgb(255, 255, 255);
+  padding: 1rem;
+  margin: 0.3rem 1rem;
+  border-radius: 0.5rem;
+}
+.comment {
+  padding: 0.5rem;
+  margin: 0.4rem 1rem;
+
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+.comment-avatar {
+  background-color: rgb(203, 205, 238);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.comment-body {
+  width: 95%;
+  background-color: var(--primary-color);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.comment .meta {
+  margin-bottom: 0.5%;
+  opacity: 0.6;
+  display: flex;
+  justify-content: space-between;
+}
+.comment-username {
+  text-transform: capitalize;
+}
+.comment-info {
+  font-size: 0.8rem;
+}
+.new-post-form {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.new-post-form input {
+  /* width: 300px; */
+}
+.edit-form-container {
+  background-color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  margin-top: 0.8rem;
+  box-shadow: 0 0 10px 1px rgba(187, 189, 196, 0.418);
+}
+.edit-form-container form div {
+  margin-bottom: 3rem;
+}
+.edit-post-form {
+  margin-bottom: 5%;
+}
+
+footer {
+  border-top: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  font-size: 110%;
+}
+footer div {
+  height: 2rem;
+  width: 2rem;
+  padding: 0.4rem;
+  border-radius: 50%;
+  border: 1px solid black;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+/* -------===================== media queries ============================= */
+
+@media only screen and (max-width: 990px) {
+  .login-form {
+    width: 50%;
+    padding: 2rem 2rem;
+  }
+  .signup-form {
+    width: 50%;
+    padding: 2rem 2rem;
+  }
+}
+@media only screen and (max-width: 820px) {
+  .login-form {
+    width: 60%;
+    padding: 2rem 1rem;
+  }
+  .signup-form {
+    width: 60%;
+    padding: 2rem 1rem;
+  }
+}
+@media only screen and (max-width: 620px) {
+  .login-form {
+    width: 80%;
+  }
+  .signup-form {
+    width: 80%;
+  }
+  header nav a {
+    margin-right: 1rem;
+    font-size: 0.9rem;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .login-form {
+    width: 94%;
+  }
+  .signup-form {
+    width: 94%;
+  }
+  header nav a {
+    margin-right: 0.2rem;
+    font-size: 0.8rem;
+  }
+}
