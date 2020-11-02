@@ -64,4 +64,14 @@
 /* ===================  PROFILE - FORM  ============================================= */
 .profile-form {
   width: 100%;
+
+}
+.profile-form label{
+    color:rgb(156, 156, 156);
+    font-size: .84rem;
+}
+.profile-form input{
+    color:rgb(134, 133, 133);
+    margin-bottom: .4rem;
+    min-width: 260px;
 }
