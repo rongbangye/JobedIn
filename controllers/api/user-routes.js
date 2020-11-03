@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, Profile } = require("../../models");
 const multer = require("multer");
+const withAuth = require("../../utils/auth");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -31,6 +32,7 @@ const upload = multer({
 // GET api/users
 router.get("/", (req, res) => {
   // Access our User model and run .findAll() method
+  console.log(req.session);
   User.findAll({
     attributes: { exclude: ["password"] },
   })
@@ -86,18 +88,20 @@ router.post("/", upload.single("picture_url"), (req, res) => {
     email: req.body.email,
     password: req.body.password,
     picture_url: req.file.path,
-  })
-    .then((dbUserData) => {
+  }).then((dbUserData) => {
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+
       res.json(dbUserData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
     });
+  });
 });
 
 // POST /api/users/login
 router.post("/login", (req, res) => {
+  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
   User.findOne({
     where: {
       email: req.body.email,
@@ -114,12 +118,29 @@ router.post("/login", (req, res) => {
       return;
     }
 
-    res.json({ user: dbUserData, message: "You are now logged in!" });
+    req.session.save(() => {
+      // declare session variables
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+
+      res.json({ user: dbUserData, message: "You are now logged in!" });
+    });
   });
 });
 
+router.post("/logout", (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
+});
+
 // DELETE /api/users/1
-router.delete("/:id", (req, res) => {
+router.delete("/:id", withAuth, (req, res) => {
   User.destroy({
     where: {
       id: req.params.id,

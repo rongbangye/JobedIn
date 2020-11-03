@@ -40,7 +40,6 @@ User.init(
     },
     picture_url: {
       type: DataTypes.STRING,
-      defaultValue: "",
       allowNull: false,
     },
   },
