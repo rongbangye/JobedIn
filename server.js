@@ -36,10 +36,5 @@ app.set("view engine", "handlebars");
 
 // turn on connection to db and server
 sequelize.sync({ force: false }).then(() => {
-<<<<<<< HEAD
-  app.listen(PORT, () => console.log(`Now listening on port ${PORT}`));
-});
-=======
   app.listen(PORT, () => console.log("Now listening"));
 });
->>>>>>> d8144dc175736e9da15eeaa194c0f4d9a1adb233
