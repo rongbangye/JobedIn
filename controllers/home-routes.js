@@ -9,8 +9,8 @@ router.get('/login', (req, res) => {
 router.get('/signup', (req, res) => {
   res.render('signup');
 });
-router.get('/profile', (req, res) => {
-  res.render('profile');
+router.get('/post/:id', (req, res) => {
+  res.render('single-post');
 });
 
 module.exports = router;

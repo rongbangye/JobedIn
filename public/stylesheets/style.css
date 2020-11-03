@@ -45,14 +45,13 @@ a:hover {
 }
 
 button {
-  background-color: #225ca3;
+  background-color: var(--primary-color);
+
   border: 0;
   padding: 0.5rem 1.3rem;
   color: white;
-  font-weight: bold;
-  transition: background-color 0.1s;
+  transition:0.1s;
   cursor: pointer;
-  border-radius: 5px;
 }
 
 button:hover {
