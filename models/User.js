@@ -38,13 +38,10 @@ User.init(
         len: [4],
       },
     },
-    type: {
+    picture_url: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    picture: {
-      type: DataTypes.STRING,
-    }
   },
   {
     hooks: {

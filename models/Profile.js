@@ -1,7 +1,7 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-class Profile extends Model { }
+class Profile extends Model {}
 
 Profile.init(
   {
@@ -9,7 +9,7 @@ Profile.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     skills: {
       type: DataTypes.STRING,
@@ -23,19 +23,27 @@ Profile.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    industry: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    interest: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'user',
-        key: 'id'
-      }
+        model: "user",
+        key: "id",
+      },
     },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'profile'
+    modelName: "profile",
   }
 );
 
