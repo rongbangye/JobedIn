@@ -11,6 +11,30 @@ Profile.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    state: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    country: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    zip_code: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     skills: {
       type: DataTypes.STRING,
       allowNull: false,
