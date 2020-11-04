@@ -1,4 +1,5 @@
 <i class="fa fa-connectdevelop" aria-hidden="true"></i>
+<img src="fa-connectdevelop.svg" width="50" height="50">
 
 # JOBEDIN
 Jobedin is a network, designed  to connect your professional identity with opportunities.
