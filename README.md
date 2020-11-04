@@ -30,9 +30,9 @@ mysql2
 ![license](https://img.shields.io/badge/License-MIT-blue)
 
 # Contributors
-[![Github](https://img.shields.io/Torabis-up-down-green-red/http/shields.io.svg)](https://github.com/Torabis)
-[![Github](https://img.shields.io/rongbangye-up-down-green-red/http/shields.io.svg)](https://github.com/rongbangye)
-[![Github](https://img.shields.io/solomonmeresa-up-down-green-red/http/shields.io.svg)](https://github.com/solomonmeresa)
+[![Github](https://img.shields.io/badge/Torabis-ff69b4.svg)](https://github.com/Torabis)
+[![Github](https://img.shields.io/badge/rongbangye-ff69b4.svg)](https://github.com/rongbangye)
+[![Github](https://img.shields.io/badge/solomonmeresa-ff69b4.svg)](https://github.com/solomonmeresa)
 
 <!-- MySQL Schema:
 
