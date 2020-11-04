@@ -15,16 +15,17 @@ Users can post  job opportunities, and leave comments and votes on other posts.
 To use this application for your own purposes: Clone the GitHub repository, and install all the dependencies, with```npm install```, on the integrated terminal install all the dependencies.
 Create your .env file and type in: ``` DB_NAME='jobedin_db' DB_USER='yourusername' DB_PW='yourpassword' ```
 In the integrated terminal, seed ```npm run seed``` and start using ```npm start``` app will run at localhost3001.
-Dependencies
-Bcrypt
-Connect-session-sequelize
-Dotenv
-express
-express-handlebars
-Express-session
-Sequelize
-multer
-mysql2
+
+# Dependencies
+- Bcrypt
+- Connect-session-sequelize
+- Dotenv
+- express
+- express-handlebars
+- Express-session
+- Sequelize
+- multer
+- mysql2
 
 # license
 ![license](https://img.shields.io/badge/License-MIT-blue)
