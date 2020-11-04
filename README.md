@@ -17,15 +17,15 @@ Create your .env file and type in: ``` DB_NAME='jobedin_db' DB_USER='yourusernam
 In the integrated terminal, seed ```npm run seed``` and start using ```npm start``` app will run at localhost3001.
 
 # Dependencies
-- Bcrypt
-- Connect-session-sequelize
-- Dotenv
 - express
-- express-handlebars
 - Express-session
+- express-handlebars
 - Sequelize
-- multer
+- Connect-session-sequelize
 - mysql2
+- Dotenv
+- Bcrypt
+- multer
 
 # license
 ![license](https://img.shields.io/badge/License-MIT-blue)
