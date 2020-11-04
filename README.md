@@ -1,5 +1,3 @@
-<i class="fa fa-connectdevelop" aria-hidden="true"></i>
-<img src="fa-connectdevelop.svg" width="50" height="50">
 
 # JOBEDIN
 Jobedin is a network, designed  to connect your professional identity with opportunities.
@@ -13,6 +11,9 @@ Users can post  job opportunities, and leave comments and votes on other posts.
 
 
 # Demo
+
+# Deployed App
+[![Heroku](https://img.shields.io/badge/Heroku-Jobedin-52A55D.svg)](https://)
 
 # Installation
 To use this application for your own purposes: Clone the GitHub repository, and install all the dependencies, with```npm install```, on the integrated terminal install all the dependencies.
