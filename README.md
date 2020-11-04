@@ -1,3 +1,5 @@
+<i class="fa fa-connectdevelop" aria-hidden="true"></i>
+
 # JOBEDIN
 Jobedin is a network, designed  to connect your professional identity with opportunities.
 
