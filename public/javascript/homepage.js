@@ -2,6 +2,9 @@
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
 const containerEl = document.querySelector('.job-container');
 const jobsEL = document.querySelector('.home-jobs');
+const searchBtn = document.querySelector('#search-form');
+const locationEL = document.querySelector('#location');
+const languageEL = document.querySelector('#language');
 
 
 
@@ -12,20 +15,14 @@ const apiURL = `http://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${config.AP
 
 fetch(proxyurl+ apiURL)
 .then(response =>{
-    // console.log(response);
     return response.json()
 }).then(data =>{
-    console.log(data.results[0].description);
-    console.log(data.results[0].location.display_name);
-    console.log(data.results[6]);
+    
     displayJob(data.results)
 })
 
 }
-var vew = function(){
-   searchJob("java","sanfrancisco")
-}
-vew();
+
 
 const displayJob = function(jobs){
 
@@ -53,3 +50,20 @@ const displayJob = function(jobs){
 
     jobsEL.appendChild(jobEL)
 }
+var formSubmitHandler = function (event) {
+    event.preventDefault();
+    // get value from input element
+    var location = locationEL.value.trim();
+    var language = languageEL.value.trim();
+  
+    if (language && location) {
+      searchJob(language,location);
+  
+      languageEL.value = "";
+      locationEL.value = "";
+    } else {
+      alert("Please enter a correct city name or location");
+    }
+  };
+
+searchBtn.addEventListener('submit',formSubmitHandler)

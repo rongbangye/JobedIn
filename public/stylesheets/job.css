@@ -54,13 +54,20 @@
   padding: 0.3rem 1.2rem;
   border-radius: 0.2rem;
 }
+.btn-job-search:focus {
+  outline: none;
+  border: none;
+}
+.btn-job-search:hover {
+  background-color: rgb(188, 219, 221);
+}
 .home-job-list-container {
   padding: 1rem 3rem;
   margin: 1rem 5rem;
   text-align: center;
 }
 .home-jobs ul li {
-  border: .3px solid rgb(151, 184, 199);
+  border: 0.3px solid rgb(151, 184, 199);
   box-shadow: 0 0 5px 1px rgba(5, 87, 100, 0.219);
 
   border-radius: 0.3rem;
