@@ -1,11 +1,19 @@
 const router = require('express').Router();
 
 
-router.get('/profile', (req, res) => {
+router.get('/', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
   res.render('profile');
 });
 // edit profile
-router.get('/profile/edit-profile', (req, res) => {
+router.get('/edit-profile', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
   res.render('edit-profile');
 });
 
