@@ -1,48 +1,43 @@
+<ul class="post-list">
+    {{#each posts as |post|}}
+    <li>
+        <article class="post">
+            <div class="title">
+                <div class="title-heading"><a href="/post/{{post.id}}">{{post.title}}</a></div>
+                <div class="title-info"> Posted by {{post.user.username}} on
+                    {{format_date post.created_at}}
+                </div>
+
+            </div>
+            <div class="meta">
+                <p>{{post.post_content}}</p>
+
+            </div>
+        </article>
+    </li>
+    {{/each}}
+</ul>
 <div class="home-job-container">
-    <section class="home-job-search-container"></section>
+    <section class="home-job-search-container">
+        <span class="brand-logo brand-logo-big"><i class="fab fa-connectdevelop"></i></span>
+        <h3>Search Your Dream Job</h3>
+        <form>
+            <div><input name="language" type="text" id="language" placeholder="Language" /></div>
+            <div><input name="location" type="text" id="location" placeholder="Location" /></div>
+            <div><button class="btn-job-search">Search</button></div>
+        </form>
+    </section>
     <section class="home-job-list-container"></section>
-     <div class="jobs">
-        <h3>Jobs</h3>
-        <div>
-            <ul>
-                <li class="m-2 p-3 border bg-light">
-                    <h6 class="m-1 p-2">software developer</h6>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti
-                        suscipit perferendis
-                        soluta adipisci, reiciendis eligendi iusto laborum eius ducimus?
-                    </p>
-                </li>
-                <li class="m-2 p-3 border bg-light">
-                    <h6>software developer</h6>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti
-                        suscipit perferendis
-                        soluta adipisci, reiciendis eligendi iusto laborum eius ducimus?
-                    </p>
-                </li>
-                <li class="m-2 p-3 border bg-light">
-                    <h6>software developer</h6>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti
-                        suscipit perferendis
-                        soluta adipisci, reiciendis eligendi iusto laborum eius ducimus?
-                    </p>
-                </li>
-                <li class="m-2 p-3 border bg-light">
-                    <h6>software developer</h6>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti
-                        suscipit perferendis
-                        soluta adipisci, reiciendis eligendi iusto laborum eius ducimus?
-                    </p>
-                </li>
-                <li class="m-2 p-3 border bg-light">
-                    <h6>software developer</h6>
-                    <p class="text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi corrupti
-                        suscipit perferendis
-                        soluta adipisci, reiciendis eligendi iusto laborum eius ducimus?
-                    </p>
-                </li>
-            </ul>
-        </div>
+    <div class="home-jobs">
+     
+            {{!-- <ul class="jobs-list">
+
+            </ul> --}}
+        
     </div>
 </div>
+
+
+
 <script src="/javascript/config.js"></script>
 <script src="/javascript/homepage.js"></script>

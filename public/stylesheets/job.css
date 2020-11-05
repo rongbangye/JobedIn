@@ -1,0 +1,67 @@
+.home-job-search-container {
+  background: rgb(2, 162, 222);
+  background: linear-gradient(
+    61deg,
+    rgb(4, 131, 177) 0%,
+    rgba(2, 168, 187, 1) 100%
+  );
+  background-image: linear-gradient(
+      61deg,
+      rgba(4, 131, 177, 0.295) 10%,
+      rgba(25, 201, 221, 0.747) 100%
+    ),
+    url("../assets/image/profile-bg-2.png");
+  background-size: cover;
+  height: 40vh;
+  width: 100%;
+  text-align: center;
+}
+.home-job-search-container form {
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+}
+.home-job-search-container form input {
+  width: 21vw;
+  margin: 0 1rem;
+  padding: 0.4rem 1rem;
+  /* color: rgb(90, 90, 90); */
+  border: none;
+  outline: none;
+  box-shadow: 0 0 10px 1px rgb(36, 136, 167);
+  font-size: 0.9rem;
+}
+.home-job-search-container h3 {
+  color: rgb(215, 239, 250);
+  font-weight: lighter;
+  font-family: "lato";
+  text-shadow: 0px 0px 17px rgba(7, 125, 141, 0.96);
+}
+.btn-job-search {
+  background-color: rgb(224, 241, 243);
+  color: rgb(38, 50, 56);
+  box-shadow: 0 0 10px 1px rgb(36, 136, 167);
+  padding: 0.3rem 1.2rem;
+  border-radius: 0.2rem;
+}
+.home-job-list-container {
+  padding: 1rem 3rem;
+  margin:1rem 5rem;
+  text-align: center;
+}
+.home-jobs ul li {
+  border: 2px solid rgb(61, 137, 207);
+  border-radius: 0.3rem;
+  padding: 1rem;
+  margin: 1rem;
+}
+.home-jobs ul h4{
+    color:rgb(65, 165, 211);
+    margin:0;
+    font-size: 1rem;
+}
+.home-jobs p{
+    color: rgb(151, 151, 151);
+    font-size: .8rem;
+    margin-bottom: .2rem;
+}
