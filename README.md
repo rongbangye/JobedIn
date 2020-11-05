@@ -4,8 +4,8 @@
 [![Heroku](https://img.shields.io/badge/Deployed_App-Heroku-52A55D.svg)](https://)       
 Jobedin is a network, designed  to connect your professional identity with opportunities.
 
-Description
-Jobedin is a RESTful API app, follows an MVC paradigm in its architectural structure.
+# Description
+:dart: [Jobedin] (https://) is a RESTful API app, follows an MVC paradigm in its architectural structure.
 
 Users can sign up safely to create a profile.
 Users can login to profile, and demonstrate their information, skills and background.
