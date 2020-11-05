@@ -7,19 +7,20 @@ Jobedin is a network, designed  to connect your professional identity with oppor
 # Description
 :dart: Jobedin is a RESTful API app, follows an MVC paradigm in its architectural structure.
 
-Users can sign up safely to create a profile. </br>    
-Users can login to profile, and demonstrate their information, skills and background. </br>     
-Users can post  job opportunities, and leave comments and votes on other posts. </br>    
+Users can sign up safely to create a profile.           
+Users can login to profile, and demonstrate their information, skills and background.      
+Users can post  job opportunities, and leave comments and votes on other posts.        
 
 
 # Demo
 :movie_camera:   
 
 # Installation
-:floppy_disk: To use this application for your own purposes: Clone the GitHub repository, and install all the dependencies, with```npm install```, on the integrated terminal install all the dependencies.
-Create your .env file and type in: ``` DB_NAME='jobedin_db' DB_USER='yourusername' DB_PW='yourpassword' ```
-In the integrated terminal, seed ```npm run seed``` and start using ```npm start``` app will run at localhost3001.
-
+:floppy_disk: To use this application for your own purposes: Clone the GitHub repository, and install all the dependencies, with```npm install```, </br> 
+on the integrated terminal install all the dependencies. </br>
+Create your .env file and type in: ``` DB_NAME='jobedin_db' DB_USER='yourusername' DB_PW='yourpassword' ``` </br>
+In the integrated terminal, seed ```npm run seed``` and start using ```npm start``` app will run at localhost3001.  </br>
+    
 # Dependencies
 :pushpin:     
 - express
