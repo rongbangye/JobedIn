@@ -11,6 +11,10 @@ Profile.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    picture_url: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     first_name: {
       type: DataTypes.STRING,
       allowNull: false,

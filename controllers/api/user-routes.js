@@ -57,6 +57,13 @@ router.get("/:id", (req, res) => {
         model: Profile,
         attributes: [
           "id",
+          "picture_url",
+          "first_name",
+          "last_name",
+          "city",
+          "state",
+          "country",
+          "zip_code",
           "skills",
           "education",
           "experience",
@@ -81,22 +88,19 @@ router.get("/:id", (req, res) => {
 });
 
 // POST /api/users
-router.post("/", upload.single("picture_url"), (req, res) => {
-  console.log(req.file);
+router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
-    picture_url: req.file.path,
-  }).then((dbUserData) => {
-    req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.loggedIn = true;
-
+  })
+    .then((dbUserData) => {
+      // console.log("hello");
       res.json(dbUserData);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
     });
-  });
 });
 
 // POST /api/users/login
