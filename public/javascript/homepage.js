@@ -35,10 +35,19 @@ const displayJob = function(jobs){
         
         jobEL.innerHTML+= `
         <li>
-        <div><h4>${job.title}</h4>
-        <p>${job.location.display_name}</p></div>
-        <div><p class="text-secondary">${job.description}</p>
-    </div></li>
+        <div class="d-flex justify-content-between">
+        <div> <h4>${job.title}</h4>
+              <p class="company-location"><i class="fas fa-map-marker-alt mr-2"></i>${job.location.display_name}</p>
+              <p class="company-name">${job.company.display_name}</p>
+        </div>
+        
+        <div><a href="${job.redirect_url}">Apply</a></div>
+         
+        </div>
+        <div>
+            <p class="text-secondary">${job.description}</p>
+         </div>
+    </li>
       `
     });
 
