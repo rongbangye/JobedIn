@@ -5,7 +5,7 @@
 Jobedin is a network, designed  to connect your professional identity with opportunities.
 
 # Description
-:dart: [Jobedin] (https://) is a RESTful API app, follows an MVC paradigm in its architectural structure.
+:dart: Jobedin is a RESTful API app, follows an MVC paradigm in its architectural structure.
 
 Users can sign up safely to create a profile.
 Users can login to profile, and demonstrate their information, skills and background.
