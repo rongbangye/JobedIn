@@ -54,11 +54,12 @@ router.get("/login", (req, res) => {
 });
 
 router.get("/signup", (req, res) => {
-  res.render("signup");
-});
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
 
-router.get("/profile", (req, res) => {
-  res.render("profile");
+  res.render("signup");
 });
 
 module.exports = router;

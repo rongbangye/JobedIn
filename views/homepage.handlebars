@@ -1,6 +1,45 @@
-<div></div>
+<ul class="post-list">
+    {{#each posts as |post|}}
+    <li>
+        <article class="post">
+            <div class="title">
+                <div class="title-heading"><a href="/post/{{post.id}}">{{post.title}}</a></div>
+                <div class="title-info"> Posted by {{post.user.username}} on
+                    {{format_date post.created_at}}
+                </div>
+
+            </div>
+            <div class="meta">
+                <p>{{post.post_content}}</p>
+
+            </div>
+        </article>
+    </li>
+    {{/each}}
+</ul>
+<div class="home-job-container">
+    <section class="home-job-search-container">
+        <span class="brand-logo brand-logo-big"><i class="fab fa-connectdevelop"></i></span>
+        <h3>Search Your Dream Job</h3>
+        <form id="search-form">
+            <div><i class="fas fa-cog"></i><input name="language" type="text" id="language"
+                    placeholder="Language" /></div>
+            <div>
+                <i class="fas fa-map-marker-alt"></i><input name="location" type="text" id="location" placeholder="Location" /></div>
+            <button class="btn-job-search" type="submit">Search</button>
+        </form>
+    </section>
+    <section class="home-job-list-container"></section>
+    <div class="home-jobs">
+
+        {{!-- <ul class="jobs-list">
+
+            </ul> --}}
+
+    </div>
+</div>
 
 
 
-
-<script src="/javascript/home.js"></script>
+<script src="/javascript/config.js"></script>
+<script src="/javascript/homepage.js"></script>
