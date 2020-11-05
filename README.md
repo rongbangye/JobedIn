@@ -7,9 +7,9 @@ Jobedin is a network, designed  to connect your professional identity with oppor
 # Description
 :dart: Jobedin is a RESTful API app, follows an MVC paradigm in its architectural structure.
 
-Users can sign up safely to create a profile.
-Users can login to profile, and demonstrate their information, skills and background.
-Users can post  job opportunities, and leave comments and votes on other posts.
+Users can sign up safely to create a profile.     
+Users can login to profile, and demonstrate their information, skills and background.      
+Users can post  job opportunities, and leave comments and votes on other posts.     
 
 
 # Demo
@@ -36,7 +36,7 @@ In the integrated terminal, seed ```npm run seed``` and start using ```npm start
 ![license](https://img.shields.io/badge/License-MIT-blue)
 
 # Contributors
-:computer:    
+   
 [![Github](https://img.shields.io/badge/Github-Torabis-52A55D.svg)](https://github.com/Torabis)
 [![Github](https://img.shields.io/badge/Github-rongbangye-52A55D.svg)](https://github.com/rongbangye)
 [![Github](https://img.shields.io/badge/Github-solomonmeresa-52A55D.svg)](https://github.com/solomonmeresa)
