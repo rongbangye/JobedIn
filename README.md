@@ -13,14 +13,15 @@ Users can post  job opportunities, and leave comments and votes on other posts.
 
 
 # Demo
-
+:movie_camera:   
 
 # Installation
-To use this application for your own purposes: Clone the GitHub repository, and install all the dependencies, with```npm install```, on the integrated terminal install all the dependencies.
+:floppy_disk: To use this application for your own purposes: Clone the GitHub repository, and install all the dependencies, with```npm install```, on the integrated terminal install all the dependencies.
 Create your .env file and type in: ``` DB_NAME='jobedin_db' DB_USER='yourusername' DB_PW='yourpassword' ```
 In the integrated terminal, seed ```npm run seed``` and start using ```npm start``` app will run at localhost3001.
 
 # Dependencies
+:pushpin:     
 - express
 - Express-session
 - express-handlebars
@@ -35,6 +36,7 @@ In the integrated terminal, seed ```npm run seed``` and start using ```npm start
 ![license](https://img.shields.io/badge/License-MIT-blue)
 
 # Contributors
+:computer:    
 [![Github](https://img.shields.io/badge/Github-Torabis-52A55D.svg)](https://github.com/Torabis)
 [![Github](https://img.shields.io/badge/Github-rongbangye-52A55D.svg)](https://github.com/rongbangye)
 [![Github](https://img.shields.io/badge/Github-solomonmeresa-52A55D.svg)](https://github.com/solomonmeresa)
