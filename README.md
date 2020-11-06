@@ -65,14 +65,14 @@ Fork it to your github ,then you can make any changes with out affecting the mai
 Once you create your database then run those scripts to seed and run server in your terminal
 
 ```javascript
-:arrow_right_hook:  npm install
-   npm run start
+npm install
+npm run start
 ```
 
 ## Test
 
 ```javascript
-:arrow_forward: npm run test
+npm run test
 ```
 
 <!-- MySQL Schema:
