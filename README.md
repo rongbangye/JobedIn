@@ -13,7 +13,10 @@ Users can post  job opportunities, and leave comments and votes on other posts.
 
 
 # Demo
-:movie_camera:   
+:movie_camera:     
+![homepage](./uploads/home)
+
+![login](./uploads/login)
 
 # Installation
 :floppy_disk: To use this application for your own purposes: Clone the GitHub repository, and install all the dependencies, with```npm install```, </br> 
