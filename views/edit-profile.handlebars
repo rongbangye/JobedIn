@@ -5,45 +5,46 @@
             <div class="profile-pic"></div>
             <div class="profile-info">
                 <form class="profile-form">
+                    {{#each profiles as |profile|}}
                     <div class="d-flex flex-wrap mx-2 px-5  my-2 border py-4 bg-white">
                         <div class="mx-2">
                             <label for="first-name-profile">First Name</label>
-                            <input type="text" id="first-name-profile" />
+                            <input type="text" id="first-name-profile" value="{{profile.first_name}}" />
                         </div>
                         <div class="mx-2">
                             <label for="last-name-profile">Last Name</label>
-                            <input type="text" id="last-name-profile" />
+                            <input type="text" id="last-name-profile" value="{{profile.last_name}}"/>
                         </div>
 
-                        <div class="mx-2">
+                        {{!-- <div class="mx-2">
                             <label for="profile-pic">Profile Picture</label>
                             <input type="file" id="profile-pic" accept="image/*" />       
-                        </div>
+                        </div> --}}
                     </div>
                     <div class="d-flex flex-wrap mx-2 px-5 my-3 border py-4 bg-white">
 
                         <div class="mx-2">
                             <label for="city-profile">City</label>
-                            <input type="text" id="city-profile" />
+                            <input type="text" id="city-profile" value="{{profile.city}}"/>
                         </div>
                         <div class="mx-2">
                             <label for="state-profile">State</label>
-                            <input type="text" id="state-profile" />
+                            <input type="text" id="state-profile" value="{{profile.state}}"/>
                         </div>
                         <div class="mx-2">
                             <label for="zipcode-profile">Zipcode</label>
-                            <input type="text" id="zipcode-profile" />
+                            <input type="text" id="zipcode-profile" value="{{profile.zip_code}}"/>
                         </div>
                         <div class="mx-2">
                             <label for="country-profile">Country</label>
-                            <input type="text" id="country-profile" />
+                            <input type="text" id="country-profile" value="{{profile.country}}"/>
                         </div>
                     </div>
                     <div class="d-flex flex-wrap mx-2 px-5 my-3 border py-4 bg-white">
 
                         <div class="mx-2">
                             <label for="skills-profile">Skills</label>
-                            <input type="text" id="skills-profile" />
+                            <input type="text" id="skills-profile" value="{{profile.skills}}"/>
                         </div>
 
                     </div>
@@ -51,7 +52,7 @@
 
                         <div class="mx-2">
                             <label for="industry-profile">Industry</label>
-                            <input type="text" id="industry-profile" />
+                            <input type="text" id="industry-profile" value="{{profile.industry}}"/>
                         </div>
 
                     </div>
@@ -59,28 +60,102 @@
 
                         <div class="mx-2">
                             <label for="school-profile">School</label>
-                            <input type="text" id="school-profile" />
+                            <input type="text" id="school-profile" value="{{profile.education}}"/>
                         </div>
-
                     </div>
-                    {{!-- <hr> --}}
                     <div class=" mx-2 px-5 my-3 border py-4 bg-white">
 
                         <div class="mx-2">
                             <label for="exprience-profile">Exprience</label>
-                            <textarea type="text" id="exprience-profile"></textarea>
+                            <textarea type="text" id="exprience-profile">{{profile.experience}}</textarea>
                         </div>
 
                     </div>
-
-
-
+                
                     <div class="form-button">
                         <button type="submit">Save</button>
                     </div>
+                  {{/each}}
                 </form>
-
             </div>
+
+          
+            <div class="profile-info">
+                <form class="create-profile-form">
+                      {{#unless profiles}}
+                    <div class="d-flex flex-wrap mx-2 px-5  my-2 border py-4 bg-white">
+                        <div class="mx-2">
+                            <label for="first-name-profile">First Name</label>
+                            <input type="text" id="first-name-profile" value="{{profile.first_name}}" />
+                        </div>
+                        <div class="mx-2">
+                            <label for="last-name-profile">Last Name</label>
+                            <input type="text" id="last-name-profile" value="{{profile.last_name}}"/>
+                        </div>
+
+                        {{!-- <div class="mx-2">
+                            <label for="profile-pic">Profile Picture</label>
+                            <input type="file" id="profile-pic" accept="image/*" />       
+                        </div> --}}
+                    </div>
+                    <div class="d-flex flex-wrap mx-2 px-5 my-3 border py-4 bg-white">
+
+                        <div class="mx-2">
+                            <label for="city-profile">City</label>
+                            <input type="text" id="city-profile" value="{{profile.city}}"/>
+                        </div>
+                        <div class="mx-2">
+                            <label for="state-profile">State</label>
+                            <input type="text" id="state-profile" value="{{profile.state}}"/>
+                        </div>
+                        <div class="mx-2">
+                            <label for="zipcode-profile">Zipcode</label>
+                            <input type="text" id="zipcode-profile" value="{{profile.zip_code}}"/>
+                        </div>
+                        <div class="mx-2">
+                            <label for="country-profile">Country</label>
+                            <input type="text" id="country-profile" value="{{profile.country}}"/>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap mx-2 px-5 my-3 border py-4 bg-white">
+
+                        <div class="mx-2">
+                            <label for="skills-profile">Skills</label>
+                            <input type="text" id="skills-profile" value="{{profile.skills}}"/>
+                        </div>
+
+                    </div>
+                    <div class="d-flex flex-wrap mx-2 px-5 my-3 border py-4 bg-white">
+
+                        <div class="mx-2">
+                            <label for="industry-profile">Industry</label>
+                            <input type="text" id="industry-profile" value="{{profile.industry}}"/>
+                        </div>
+
+                    </div>
+                    <div class="d-flex flex-wrap mx-2 px-5 my-3 border py-4 bg-white">
+
+                        <div class="mx-2">
+                            <label for="school-profile">School</label>
+                            <input type="text" id="school-profile" value="{{profile.education}}"/>
+                        </div>
+                    </div>
+                    <div class=" mx-2 px-5 my-3 border py-4 bg-white">
+
+                        <div class="mx-2">
+                            <label for="exprience-profile">Exprience</label>
+                            <textarea type="text" id="exprience-profile">{{profile.experience}}</textarea>
+                        </div>
+
+                    </div>
+                
+                    <div class="create-button">
+                        <button type="submit">Create</button>
+                    </div>
+                    {{/unless}}
+                </form>
+            </div>
+  
         </div>
     </div>
     <div class="jobs">
@@ -126,3 +201,5 @@
         </div>
     </div>
 </div>
+
+<script src="/javascript/edit-profile.js"></script>
