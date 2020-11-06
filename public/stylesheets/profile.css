@@ -6,10 +6,10 @@
   flex-wrap: wrap;
 }
 .profile {
-  width: 65%;
-  border: 1px solid rgb(172, 172, 172);
-
+  width: 65%;  box-shadow: 0 0 10px 1px rgb(186, 200, 204);
+  border-radius:.4rem;
   margin: 3rem 0rem;
+  overflow:hidden;
 }
 .profile-image-container {
   background-image: url("../assets/image/profile-bg.png");
@@ -56,22 +56,21 @@
   background-color: rgb(182, 201, 218);
 }
 .jobs {
-  width: 32%;
-  margin: 3rem 0rem;
-  background-color: rgb(210, 242, 255);
+  width: 34%;
+  margin: 2rem 0rem;
+  /* background-color: rgb(233, 246, 252); */
 }
 
 /* ===================  PROFILE - FORM  ============================================= */
 .profile-form {
   width: 100%;
-
 }
-.profile-form label{
-    color:rgb(156, 156, 156);
-    font-size: .84rem;
+.profile-form label {
+  color: rgb(156, 156, 156);
+  font-size: 0.84rem;
 }
-.profile-form input{
-    color:rgb(134, 133, 133);
-    margin-bottom: .4rem;
-    min-width: 260px;
+.profile-form input {
+  color: rgb(134, 133, 133);
+  margin-bottom: 0.4rem;
+  min-width: 260px;
 }

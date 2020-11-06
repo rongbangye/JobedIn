@@ -20,6 +20,7 @@
   padding: 2%;
   display: flex;
   justify-content: center;
+  /* flex-wrap: wrap; */
 }
 .home-job-search-container form div {
   background-color: #fff;
@@ -27,16 +28,19 @@
   box-shadow: 0 0 10px 1px rgb(36, 136, 167);
   /* padding: 0.1rem 1rem; */
   color: rgb(134, 134, 134);
-  border: none;
+  border-radius: 1rem;
+
   outline: none;
   padding-top: 0.3rem;
   padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 .home-job-search-container form i {
-  margin-right: 0.7rem;
+  margin-right: 0.9rem;
+  margin-left: 0.3rem;
 }
 .home-job-search-container form input {
-  width: 21vw;
+  width: 25vw;
   border: none;
   outline: none;
   font-size: 0.8rem;
@@ -48,11 +52,12 @@
   text-shadow: 0px 0px 17px rgba(7, 125, 141, 0.96);
 }
 .btn-job-search {
-  background-color: rgb(224, 241, 243);
-  color: rgb(38, 50, 56);
+  background-color: rgb(2, 120, 150);
+  color: rgb(176, 234, 252);
   box-shadow: 0 0 10px 1px rgb(36, 136, 167);
-  padding: 0.3rem 1.2rem;
-  border-radius: 0.2rem;
+  padding: 0.4rem 1.4rem;
+  border-radius: 2rem;
+  font-size: 0.9rem;
 }
 .btn-job-search:focus {
   outline: none;
@@ -85,6 +90,7 @@
   color: rgb(65, 165, 211);
   margin: 0;
   font-size: 1rem;
+  text-align: left;
 }
 .home-jobs p {
   color: rgb(151, 151, 151);
@@ -92,8 +98,13 @@
   margin-bottom: 0.2rem;
 }
 .home-jobs a {
-  font-size: 0.8rem;
+  font-size: 0.7rem;
   font-weight: bold;
+   
+  border-radius: 1rem;
+  background-color: rgb(219, 237, 245);
+  padding:.3rem .9rem;
+  text-decoration: none;
 }
 .home-jobs .company-location {
   color: rgb(163, 163, 163);
@@ -102,4 +113,157 @@
   color: rgb(102, 102, 102);
   font-size: 1rem;
   font-weight: bold;
+}
+/* =======================================  MEDIA QUERIES ======================= */
+@media only screen and (max-width: 920px) {
+  .home-jobs ul {
+    padding: 0 1rem;
+    margin: 0 1rem;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .home-jobs ul {
+    padding: 0rem;
+    margin: 0rem;
+  }
+  .home-jobs ul li {
+    padding: 1rem;
+    width: 94%;
+  }
+  .home-job-search-container form input {
+    width: 28vw;
+  }
+  .btn-job-search {
+    padding: 0.2rem 1.2rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-family: "lato";
+  }
+}
+@media only screen and (max-width: 650px) {
+  .home-job-search-container form div {
+    background-color: #fff;
+    margin: 0rem auto;
+    padding-top: 0.3rem;
+    padding-left: 0.5rem;
+    text-align: left;
+  }
+  .btn-job-search {
+    padding: 0.2rem 1.2rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-family: "lato";
+  }
+}
+@media only screen and (max-width: 550px) {
+  .home-job-search-container form {
+    padding: 1%;
+    display: block;
+    /* justify-content: center; */
+    /* flex-wrap: wrap; */
+    text-align: center;
+  }
+  .home-job-search-container form div {
+    background-color: #fff;
+    margin: 1rem auto;
+    padding-top: 0.3rem;
+    padding-left: 0.5rem;
+    width: 70%;
+    text-align: left;
+  }
+  .home-job-search-container {
+    height: 60vh;
+    width: 100%;
+    text-align: center;
+  }
+  .home-job-search-container form input {
+    padding-bottom: 0.4rem;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .home-job-search-container form div {
+    width: 80%;
+  }
+}
+/* =============================================================== */
+/* =============================================================== */
+/* =============================================================== */
+/* =============================================================== */
+/* =============================================================== */
+/* =============================================================== */
+
+#profile-jobs {
+  padding: 0rem;
+  margin: 0rem 0rem;
+  text-align: center;
+}
+#profile-jobs ul li {
+  border: 0.3px solid rgb(151, 184, 199);
+  box-shadow: 0 0 5px 1px rgba(5, 87, 100, 0.219);
+
+  border-radius: 0.3rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  background-color: rgb(241, 250, 253);
+}
+
+#profile-jobs ul {
+  padding: 0rem;
+  margin: 0rem;
+}
+#profile-jobs ul h4 {
+  color: rgb(65, 165, 211);
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+}
+#profile-jobs p {
+  color: rgb(151, 151, 151);
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+  text-align: left;
+}
+#profile-jobs a {
+  font-size: 0.7rem;
+  font-weight: bold;
+  
+  border-radius: 1rem;
+  background-color: rgb(226, 239, 245);
+  padding:.3rem .7rem;
+  text-decoration: none;
+}
+#profile-jobs .company-location {
+  color: rgb(163, 163, 163);
+  text-align: left;
+}
+#profile-jobs .company-name {
+  color: rgb(102, 102, 102);
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* =======================================  MEDIA QUERIES ======================= */
+@media only screen and (max-width: 920px) {
+  #profile-jobs ul {
+    padding: 0rem;
+    margin: 0rem;
+  }
+}
+@media only screen and (max-width: 720px) {
+  #profile-jobs ul {
+    padding: 0rem;
+    margin: 0rem;
+  }
+  #profile-jobs ul li {
+    padding: 1rem;
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 650px) {
+}
+@media only screen and (max-width: 550px) {
+}
+@media only screen and (max-width: 400px) {
 }

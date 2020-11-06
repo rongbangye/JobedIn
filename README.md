@@ -13,15 +13,18 @@ Users can post job opportunities, and leave comments and votes on other posts.
 
 ## Table of Contents
 
-- [Built](#built)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-- [Visuals](#visuals)
+- [Visuals](#Demo)
+- [Installation](#Installation)
+- [Dependencies](#Dependencies)
+- [Reach Us](#Reach-Us)
+- [Contribution](#Contribution)
+- [Test](#Test)
 
 # Demo
+:movie_camera:     
+![homepage](/uploads/home.png)
 
-:movie_camera:
+![login](/uploads/login.png)
 
 # Installation
 
@@ -49,7 +52,7 @@ In the integrated terminal, seed `npm run seed` and start using `npm start` app 
 
 ![license](https://img.shields.io/badge/License-MIT-blue)
 
-# Contributors
+# Reach Us
 
 [![Github](https://img.shields.io/badge/Github-Torabis-52A55D.svg)](https://github.com/Torabis)
 [![Github](https://img.shields.io/badge/Github-rongbangye-52A55D.svg)](https://github.com/rongbangye)
@@ -62,22 +65,14 @@ Fork it to your github ,then you can make any changes with out affecting the mai
 Once you create your database then run those scripts to seed and run server in your terminal
 
 ```javascript
-👉 npm install
-👉 npm run start
+npm install
+npm run start
 ```
-
-[Solomon](https://github.com/solomonmeresa)
-[Torabis](https://github.com/Torabis)
-[Rongbangye](https://github.com/rongbangye)
-
-## How to reach us
-
-Email : solomonmeresa8@gmail.com
 
 ## Test
 
 ```javascript
-👉 npm run test
+npm run test
 ```
 
 <!-- MySQL Schema:
