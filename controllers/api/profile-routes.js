@@ -1,22 +1,6 @@
 const router = require("express").Router();
 const { Profile, Post, User } = require("../../models");
 const withAuth = require("../../utils/auth");
-// const { v4: uuid } = require("uuid");
-
-// const multer = require("multer");
-// const storage = multer.memoryStorage({
-//   destination: function (req, file, callback) {
-//     callback(null, "");
-//   },
-// });
-// var upload = multer({ storage });
-
-// const AWS = require("aws-sdk");
-// const s3 = new AWS.S3({
-//   accessKeyId: process.env.aws_accesskey,
-//   secretAccessKey: process.env.aws_secretkey,
-// });
-// let fs = require("fs");
 
 // Get /profiles/:id
 router.get("/:id", (req, res) => {
@@ -56,27 +40,7 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// Post /profiles
-// router.post("/", upload.single("picture_url"), withAuth, (req, res) => {
-//   let myFile = req.file.originalname.split(".");
-//   const fileType = myFile[myFile.length - 1];
-//   console.log(req.file);
-
-//   const params = {
-//     Bucket: process.env.aws_bucket,
-//     Key: `${uuid()}.${fileType}`,
-//     Body: req.file.buffer,
-//   };
-
-//   s3.upload(params, (error, data) => {
-//     if (error) {
-//       res.status(500).send(error);
-//     }
-
-//     res.status(200).send(data);
-//   });
-// });
-
+// Create a profile
 router.post("/", (req, res) => {
   Profile.create({
     // picture_url: req.file.path,
@@ -106,7 +70,7 @@ router.post("/", (req, res) => {
     });
 });
 
-// Put/Update profile
+// Update profile
 router.put("/:id", (req, res) => {
   Profile.update(
     {

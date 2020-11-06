@@ -44,6 +44,7 @@ async function profileHandler(event) {
   }
 }
 
+// Added Create Profile Function
 async function createProfilerHandler(event) {
   event.preventDefault();
 
@@ -93,6 +94,7 @@ document
   .querySelector(".profile-form")
   .addEventListener("submit", profileHandler);
 
+// Add create profile handler function
 document
   .querySelector(".create-profile-form")
   .addEventListener("submit", createProfilerHandler);
