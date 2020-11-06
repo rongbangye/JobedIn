@@ -20,8 +20,10 @@ Users can post job opportunities, and leave comments and votes on other posts.
 - [Visuals](#visuals)
 
 # Demo
+:movie_camera:     
+![homepage](/uploads/home.png)
 
-:movie_camera:
+![login](/uploads/login.png)
 
 # Installation
 
