@@ -16,7 +16,7 @@ Users can post job opportunities, and leave comments and votes on other posts.
 - [Visuals](#Demo)
 - [Installation](#Installation)
 - [Dependencies](#Dependencies)
-- [Credit](#Contributors)
+- [# Reach Us](#Reach-Us)
 - [Test](#Test)
 
 # Demo
@@ -51,7 +51,7 @@ In the integrated terminal, seed `npm run seed` and start using `npm start` app 
 
 ![license](https://img.shields.io/badge/License-MIT-blue)
 
-# Contributors
+# Reach Us
 
 [![Github](https://img.shields.io/badge/Github-Torabis-52A55D.svg)](https://github.com/Torabis)
 [![Github](https://img.shields.io/badge/Github-rongbangye-52A55D.svg)](https://github.com/rongbangye)
@@ -67,14 +67,6 @@ Once you create your database then run those scripts to seed and run server in y
 👉 npm install
 👉 npm run start
 ```
-## How to reach us
-
-[Solomon](https://github.com/solomonmeresa)
-[Torabis](https://github.com/Torabis)
-[Rongbangye](https://github.com/rongbangye)
-
-
-Email : solomonmeresa8@gmail.com
 
 ## Test
 
