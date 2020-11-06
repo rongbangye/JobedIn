@@ -17,6 +17,7 @@ Users can post job opportunities, and leave comments and votes on other posts.
 - [Installation](#Installation)
 - [Dependencies](#Dependencies)
 - [Reach Us](#Reach-Us)
+- [Contribution](#Contribution)
 - [Test](#Test)
 
 # Demo
@@ -64,14 +65,14 @@ Fork it to your github ,then you can make any changes with out affecting the mai
 Once you create your database then run those scripts to seed and run server in your terminal
 
 ```javascript
-👉 npm install
-👉 npm run start
+:arrow_right_hook:  npm install
+   npm run start
 ```
 
 ## Test
 
 ```javascript
-👉 npm run test
+:arrow_forward: npm run test
 ```
 
 <!-- MySQL Schema:
