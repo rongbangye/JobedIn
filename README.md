@@ -16,7 +16,7 @@ Users can post job opportunities, and leave comments and votes on other posts.
 - [Visuals](#Demo)
 - [Installation](#Installation)
 - [Dependencies](#Dependencies)
-- [# Reach Us](#Reach-Us)
+- [Reach Us](#Reach-Us)
 - [Test](#Test)
 
 # Demo
