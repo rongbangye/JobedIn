@@ -10,7 +10,7 @@ const languageEL = document.querySelector('#language');
 
 
 var searchJob = function(language,city){
-const apiURL = `http://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${config.APP_ID}&app_key=${config.API_KEY}&results_per_page=20&what=${language}%20developer&where=${city}&content-type=application/json`;
+const apiURL = `http://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${config.APP_ID}&app_key=${config.API_KEY}&results_per_page=10&what=${language}%20developer&where=${city}&content-type=application/json`;
 
 
 fetch(proxyurl+ apiURL)
@@ -25,9 +25,10 @@ fetch(proxyurl+ apiURL)
 
 
 const displayJob = function(jobs){
+    // clear area first
+     jobsEL.textContent="";
 
     let jobEL=document.createElement("ul");
-    // jobEL.addClass("m-2 p-3 border bg-light");
    jobs.forEach(job=>{
         
         jobEL.innerHTML+= `
@@ -50,20 +51,46 @@ const displayJob = function(jobs){
 
     jobsEL.appendChild(jobEL)
 }
-var formSubmitHandler = function (event) {
+const formSubmitHandler = function (event) {
     event.preventDefault();
     // get value from input element
     var location = locationEL.value.trim();
     var language = languageEL.value.trim();
   
     if (language && location) {
+    // search job
       searchJob(language,location);
-  
+
+    // save to local storage
+      saveToLocalStorage(language,location)
       languageEL.value = "";
       locationEL.value = "";
     } else {
       alert("Please enter a correct city name or location");
     }
   };
+
+const saveToLocalStorage = function(language,city){
+  localStorage.setItem("searchedCity", city.toString());
+  localStorage.setItem("searchedLanguage", language.toString());
+
+}
+
+//----- FUNCTION- LOAD PAGE ------------------------------------------------
+
+const loadPage = function () {
+    // get the last searched country name from localstorage
+    var lastSearchedCity = localStorage.getItem("searchedCity");
+    var lastSearchedLanguage = localStorage.getItem("searchedLanguage");
+  
+    // get the data for the last searched country
+    if (lastSearchedCity&& lastSearchedLanguage) {
+      searchJob(lastSearchedLanguage,lastSearchedCity);
+    } else {
+      searchJob("java","sanfrancisco");
+    }
+    // if there was no searched country before search for USA
+  };
+loadPage();
 
 searchBtn.addEventListener('submit',formSubmitHandler)
