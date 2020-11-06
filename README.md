@@ -13,11 +13,11 @@ Users can post job opportunities, and leave comments and votes on other posts.
 
 ## Table of Contents
 
-- [Built](#built)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-- [Visuals](#visuals)
+- [Visuals](#Demo)
+- [Installation](#Installation)
+- [Dependencies](#Dependencies)
+- [Credit](#Contributors)
+- [Test](#Test)
 
 # Demo
 :movie_camera:     
@@ -67,12 +67,12 @@ Once you create your database then run those scripts to seed and run server in y
 👉 npm install
 👉 npm run start
 ```
+## How to reach us
 
 [Solomon](https://github.com/solomonmeresa)
 [Torabis](https://github.com/Torabis)
 [Rongbangye](https://github.com/rongbangye)
 
-## How to reach us
 
 Email : solomonmeresa8@gmail.com
 
