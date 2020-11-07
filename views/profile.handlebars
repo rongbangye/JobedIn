@@ -1,3 +1,6 @@
+
+
+
 <div class="row ">
     <div class="profile  ">
         <div class="profile-image-container"></div>
@@ -6,19 +9,17 @@
             <div class="profile-info">
                 <div>
                     {{!-- <h4>{{user.username}}</h4> --}}
-                    {{!-- {{#each profiles as |profile|}} --}}
-                    {{!-- ====================================================================== --}}
-                    <h4>{{profile.first_name}} {{profile.last_name}}</h4>
+                    {{#each profiles as |profile|}}
+                    <h4>{{upperCaseFirst profile.first_name}} {{upperCaseFirst profile.last_name}}</h4>
 
-                    <p><span class="mr-3"><i class="fas fa-map-marker-alt"></i></span>{{profile.city}}
-                        ,{{profile.state}},
-                        {{profile.country}}
+                    <p><span class="mr-3"><i class="fas fa-map-marker-alt"></i></span>{{upperCaseFirst profile.city}}
+                        ,{{upperCaseFirst profile.state}},
+                        {{upperCaseFirst profile.country}}
                     </p>
                     <p><span class="mr-2"><i class="fas fa-graduation-cap"></i></span>Attended: {{profile.education}}
                     </p>
                     <p><span class="mr-2"><i class="fas fa-cogs"></i></span>Skills: {{profile.skills}}</p>
-                    
-               
+                    {{/each}}
                 </div>
                 <div class="btn-edit-profile">
                     <a href="/profile/edit-profile/{{user.user_id}}"><i class="fas fa-pencil-alt"></i></a>
@@ -39,7 +40,7 @@
             </form>
 
         </section>
-        {{!-- /======================================= --}}
+        {{!-- =========================================== --}}
 
         
     </div>

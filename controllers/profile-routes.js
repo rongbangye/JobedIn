@@ -1,14 +1,13 @@
 const router = require("express").Router();
-const { User, Profile ,Post, Comment} = require("../models");
+const { User, Profile } = require("../models");
 const sequelize = require("../config/connection");
 const withAuth = require("../utils/auth");
 
-router.get("/:id", withAuth, (req, res) => {
+router.get("/", withAuth, (req, res) => {
   console.log(req.session);
-  Profile.findOne({
+  Profile.findAll({
     where: {
-      // user_id: req.session.user_id,
-    id: req.session.user_id,
+      user_id: req.session.user_id,
     },
     attributes: [
       "first_name",
@@ -25,26 +24,23 @@ router.get("/:id", withAuth, (req, res) => {
     ],
   })
     .then((dbProfileData) => {
-      const profile = dbProfileData.get({ plain: true });
+      const profiles = dbProfileData.map((profile) =>
+        profile.get({ plain: true })
+      );
+      console.log(profiles);
       const user = req.session;
-      res.render("profile", { profile, user ,loggedIn:true});
+      res.render("profile", { profiles, user, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
-
- 
-
-    
 });
-
 // edit profile
 router.get("/edit-profile/:id", (req, res) => {
-  Profile.findOne({
+  Profile.findAll({
     where: {
-      // user_id: req.session.user_id,
-      id: req.session.user_id,
+      id: req.params.id,
     },
     attributes: [
       "first_name",
@@ -61,13 +57,16 @@ router.get("/edit-profile/:id", (req, res) => {
     ],
   })
     .then((dbProfileData) => {
-      const profile = dbProfileData.get({ plain: true });
-      // const profiles = dbProfileData.map((profile) =>
-      //   profile.get({ plain: true })
-      // );
-      // console.log(profiles);
+      const profiles = dbProfileData.map((profile) =>
+        profile.get({ plain: true })
+      );
+      console.log(profiles);
       const user = req.session;
-      res.render("edit-profile", { profile, user,loggedIn: req.session.loggedIn });
+      res.render("edit-profile", {
+        profiles,
+        user,
+        loggedIn: req.session.loggedIn,
+      });
     })
     .catch((err) => {
       console.log(err);
@@ -75,35 +74,30 @@ router.get("/edit-profile/:id", (req, res) => {
     });
 });
 // edit post
-router.get('/edit-post/:id', (req, res) => {
+router.get("/edit-post/:id", (req, res) => {
   Post.findOne({
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
-    attributes: [
-      'id',
-      'content',
-      'title',
-      'created_at'
-     ],
+    attributes: ["id", "post_content", "title", "created_at"],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+        attributes: ["id", "comment_text", "post_id", "user_id", "created_at"],
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ["username"],
+        },
       },
       {
         model: User,
-        attributes: ['username']
-      }
-    ]
+        attributes: ["username"],
+      },
+    ],
   })
-    .then(dbPostData => {
+    .then((dbPostData) => {
       if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
+        res.status(404).json({ message: "No post found with this id" });
         return;
       }
 
@@ -111,12 +105,12 @@ router.get('/edit-post/:id', (req, res) => {
       const post = dbPostData.get({ plain: true });
 
       // pass data to template
-      res.render('edit-post', {
+      res.render("edit-post", {
         post,
-        loggedIn: true
-       });
+        loggedIn: true,
+      });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });

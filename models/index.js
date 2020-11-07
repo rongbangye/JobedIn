@@ -66,6 +66,16 @@ Post.hasMany(Comment, {
   onDelete: "SET NULL",
 });
 
+// Profile.hasMany(Post,{
+//   through: User,
+//   as: "profile_posts",
+//   foreignKey: "user_id",
+
+// })
+
+// Post.belongsTo(Profile,{
+
+// })
 /**
  * Comment out below code
  * Because received error with this:
