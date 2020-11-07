@@ -4,13 +4,13 @@
         <article class="post">
             <div class="title">
                 <div class="title-heading"><a href="/post/{{post.id}}">{{post.title}}</a></div>
-                <div class="title-info"> Posted by {{post.user.username}} on
+                <div class="title-info"> {{post.user.username}} 
                     {{format_date post.created_at}}
                 </div>
 
             </div>
             <div class="meta">
-                <p>{{post.post_content}}</p>
+                <p>{{post.content}}</p>
 
             </div>
         </article>

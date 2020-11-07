@@ -1,39 +1,59 @@
-<div class="row">
-    <div class="profile  bg-light">
+<div class="row ">
+    <div class="profile  ">
         <div class="profile-image-container"></div>
-        <div class="profile-info-container">
+        <div class="profile-info-container bg-light">
             <div class="profile-pic"></div>
             <div class="profile-info">
                 <div>
-                    <h4>{{user.username}}</h4>
+                    {{!-- <h4>{{user.username}}</h4> --}}
                     {{#each profiles as |profile|}}
-                    <h4>{{profile.first_name}}</h4>
-                    <h4>{{profile.last_name}}</h4>
-                    <p><span class="mr-3"><i class="fas fa-map-marker-alt"></i></span>{{profile.city}} {{profile.state}} {{profile.country}}
+                    <h4>{{profile.first_name}} {{profile.last_name}}</h4>
+
+                    <p><span class="mr-3"><i class="fas fa-map-marker-alt"></i></span>{{profile.city}}
+                        ,{{profile.state}},
+                        {{profile.country}}
                     </p>
-                    <p><span class="mr-2"><i class="fas fa-graduation-cap"></i></span>Attended: {{profile.education}}</p>
-                    <p><span class="mr-2"><i class="fas fa-graduation-cap"></i></span>Skills: {{profile.skills}}</p>
+                    <p><span class="mr-2"><i class="fas fa-graduation-cap"></i></span>Attended: {{profile.education}}
+                    </p>
+                    <p><span class="mr-2"><i class="fas fa-cogs"></i></span>Skills: {{profile.skills}}</p>
                     {{/each}}
                 </div>
                 <div class="btn-edit-profile">
-                    <a href="/profile/edit-profile/{{user.user_id}}"><i
-                            class="fas fa-pencil-alt"></i></a>
+                    <a href="/profile/edit-profile/{{user.user_id}}"><i class="fas fa-pencil-alt"></i></a>
                 </div>
             </div>
         </div>
-    </div>
+        <section class="create-new-post bg-light">
+            <h5>Create New Post</h5>
 
-    
-    <div class="jobs">
+            <form class="new-post-form">
+                <div>
+                    <input type="text" id="post-title" name="post-title" placeholder="Title" />
+                </div>
+                <div>
+                    <input id="post_content" name="post_content" placeholder="Content" />
+                </div>
+                <button type="submit" class="btn">Create</button>
+            </form>
 
-       <div class="home-jobs" id="profile-jobs">
+        </section>
 
-            
-
-        </div>
         
     </div>
+
+
+    <div class="jobs">
+
+        <div class="home-jobs" id="profile-jobs">
+
+
+
+        </div>
+
+    </div>
+
 </div>
 
 <script src="/javascript/config.js"></script>
+<script src="/javascript/add-post.js"></script>
 <script src="/javascript/homepage.js"></script>

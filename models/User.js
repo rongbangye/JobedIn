@@ -46,6 +46,10 @@ User.init(
         newUserData.password = await bcrypt.hash(newUserData.password, 10);
         return newUserData;
       },
+      //  beforeCreate(newUserData) {
+      //   newUserData.name=newUserData.name[0].toUpperCase() + newUserData.name.slice(1);
+      //   return newUserData.name;
+      // },
 
       async beforeUpdate(updatedUserData) {
         updatedUserData.password = await bcrypt.hash(

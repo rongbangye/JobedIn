@@ -1,8 +1,8 @@
-<a href="/profile"> &larr; Back to dashboard</a>
-<article class="edit-form-container">
-    <h2>
+{{!-- <a href="/profile"> &larr; Back to profile</a> --}}
+<article class="edit-form-container bg-light">
+    <h5>
         Edit Post
-    </h2>
+    </h5>
     <form class="edit-post-form">
         <div>
             <p><input name="post-title" type="text" value="{{post.title}}" /></p>
@@ -12,13 +12,13 @@
         </div>
 
         <button type="submit">Save post</button>
-        <button type="button" class="delete-post-btn">Delete post</button>
+        <button type="button" class="delete-post-btn"> Delete</button>
     </form>
 </article>
 {{!-- <hr> --}}
 <form class="comment-form">
     <div>
-        <textarea name="comment-body"></textarea>
+        <input name="comment-body" placeholder="Comment"/>
     </div>
 
     <div>
