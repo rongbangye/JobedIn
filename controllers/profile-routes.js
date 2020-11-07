@@ -1,13 +1,14 @@
 const router = require("express").Router();
-const { User, Profile } = require("../models");
+const { User, Profile ,Post, Comment} = require("../models");
 const sequelize = require("../config/connection");
 const withAuth = require("../utils/auth");
 
-router.get("/", withAuth, (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
   console.log(req.session);
-  Profile.findAll({
+  Profile.findOne({
     where: {
-      user_id: req.session.user_id,
+      // user_id: req.session.user_id,
+    id: req.session.user_id,
     },
     attributes: [
       "first_name",
@@ -24,23 +25,26 @@ router.get("/", withAuth, (req, res) => {
     ],
   })
     .then((dbProfileData) => {
-      const profiles = dbProfileData.map((profile) =>
-        profile.get({ plain: true })
-      );
-      console.log(profiles);
+      const profile = dbProfileData.get({ plain: true });
       const user = req.session;
-      res.render("profile", { profiles, user });
+      res.render("profile", { profile, user ,loggedIn:true});
     })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
+
+ 
+
+    
 });
+
 // edit profile
 router.get("/edit-profile/:id", (req, res) => {
-  Profile.findAll({
+  Profile.findOne({
     where: {
-      id: req.params.id,
+      // user_id: req.session.user_id,
+      id: req.session.user_id,
     },
     attributes: [
       "first_name",
@@ -57,12 +61,13 @@ router.get("/edit-profile/:id", (req, res) => {
     ],
   })
     .then((dbProfileData) => {
-      const profiles = dbProfileData.map((profile) =>
-        profile.get({ plain: true })
-      );
-      console.log(profiles);
+      const profile = dbProfileData.get({ plain: true });
+      // const profiles = dbProfileData.map((profile) =>
+      //   profile.get({ plain: true })
+      // );
+      // console.log(profiles);
       const user = req.session;
-      res.render("edit-profile", { profiles, user,loggedIn: req.session.loggedIn });
+      res.render("edit-profile", { profile, user,loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
@@ -77,7 +82,7 @@ router.get('/edit-post/:id', (req, res) => {
     },
     attributes: [
       'id',
-      'post_content',
+      'content',
       'title',
       'created_at'
      ],

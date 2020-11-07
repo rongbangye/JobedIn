@@ -5,7 +5,7 @@
             <div class="profile-pic"></div>
             <div class="profile-info">
                 <form class="profile-form">
-                    {{#each profiles as |profile|}}
+                    {{!-- {{#each profiles as |profile|}} --}}
                     <div class="d-flex flex-wrap mx-2 px-5  my-2 border py-4 bg-white">
                         <div class="mx-2">
                             <label for="first-name-profile">First Name</label>
@@ -13,7 +13,7 @@
                         </div>
                         <div class="mx-2">
                             <label for="last-name-profile">Last Name</label>
-                            <input type="text" id="last-name-profile" value="{{profile.last_name}}"/>
+                            <input type="text" id="last-name-profile" value="{{profile.last_name}}" />
                         </div>
 
                         {{!-- <div class="mx-2">
@@ -25,26 +25,26 @@
 
                         <div class="mx-2">
                             <label for="city-profile">City</label>
-                            <input type="text" id="city-profile" value="{{profile.city}}"/>
+                            <input type="text" id="city-profile" value="{{profile.city}}" />
                         </div>
                         <div class="mx-2">
                             <label for="state-profile">State</label>
-                            <input type="text" id="state-profile" value="{{profile.state}}"/>
+                            <input type="text" id="state-profile" value="{{profile.state}}" />
                         </div>
                         <div class="mx-2">
                             <label for="zipcode-profile">Zipcode</label>
-                            <input type="text" id="zipcode-profile" value="{{profile.zip_code}}"/>
+                            <input type="text" id="zipcode-profile" value="{{profile.zip_code}}" />
                         </div>
                         <div class="mx-2">
                             <label for="country-profile">Country</label>
-                            <input type="text" id="country-profile" value="{{profile.country}}"/>
+                            <input type="text" id="country-profile" value="{{profile.country}}" />
                         </div>
                     </div>
                     <div class="d-flex flex-wrap mx-2 px-5 my-3 border py-4 bg-white">
 
                         <div class="mx-2">
                             <label for="skills-profile">Skills</label>
-                            <input type="text" id="skills-profile" value="{{profile.skills}}"/>
+                            <input type="text" id="skills-profile" value="{{profile.skills}}" />
                         </div>
 
                     </div>
@@ -52,7 +52,7 @@
 
                         <div class="mx-2">
                             <label for="industry-profile">Industry</label>
-                            <input type="text" id="industry-profile" value="{{profile.industry}}"/>
+                            <input type="text" id="industry-profile" value="{{profile.industry}}" />
                         </div>
 
                     </div>
@@ -60,7 +60,7 @@
 
                         <div class="mx-2">
                             <label for="school-profile">School</label>
-                            <input type="text" id="school-profile" value="{{profile.education}}"/>
+                            <input type="text" id="school-profile" value="{{profile.education}}" />
                         </div>
                     </div>
                     <div class=" mx-2 px-5 my-3 border py-4 bg-white">
@@ -71,18 +71,18 @@
                         </div>
 
                     </div>
-                
+
                     <div class="form-button">
                         <button type="submit">Save</button>
                     </div>
-                  {{/each}}
+                    {{!-- {{/each}} --}}
                 </form>
             </div>
 
-             {{!-- Add Profile Create if user doesn't have profile yet           --}}
+            {{!-- Add Profile Create if user doesn't have profile yet           --}}
             <div class="profile-info">
                 <form class="create-profile-form">
-                      {{#unless profiles}}
+                    {{#unless profile}}
                     <div class="d-flex flex-wrap mx-2 px-5  my-2 border py-4 bg-white">
                         <div class="mx-2">
                             <label for="first-name-profile">First Name</label>
@@ -90,7 +90,7 @@
                         </div>
                         <div class="mx-2">
                             <label for="last-name-profile">Last Name</label>
-                            <input type="text" id="last-name-profile" value="{{profile.last_name}}"/>
+                            <input type="text" id="last-name-profile" value="{{profile.last_name}}" />
                         </div>
 
                         {{!-- <div class="mx-2">
@@ -102,26 +102,26 @@
 
                         <div class="mx-2">
                             <label for="city-profile">City</label>
-                            <input type="text" id="city-profile" value="{{profile.city}}"/>
+                            <input type="text" id="city-profile" value="{{profile.city}}" />
                         </div>
                         <div class="mx-2">
                             <label for="state-profile">State</label>
-                            <input type="text" id="state-profile" value="{{profile.state}}"/>
+                            <input type="text" id="state-profile" value="{{profile.state}}" />
                         </div>
                         <div class="mx-2">
                             <label for="zipcode-profile">Zipcode</label>
-                            <input type="text" id="zipcode-profile" value="{{profile.zip_code}}"/>
+                            <input type="text" id="zipcode-profile" value="{{profile.zip_code}}" />
                         </div>
                         <div class="mx-2">
                             <label for="country-profile">Country</label>
-                            <input type="text" id="country-profile" value="{{profile.country}}"/>
+                            <input type="text" id="country-profile" value="{{profile.country}}" />
                         </div>
                     </div>
                     <div class="d-flex flex-wrap mx-2 px-5 my-3 border py-4 bg-white">
 
                         <div class="mx-2">
                             <label for="skills-profile">Skills</label>
-                            <input type="text" id="skills-profile" value="{{profile.skills}}"/>
+                            <input type="text" id="skills-profile" value="{{profile.skills}}" />
                         </div>
 
                     </div>
@@ -129,7 +129,7 @@
 
                         <div class="mx-2">
                             <label for="industry-profile">Industry</label>
-                            <input type="text" id="industry-profile" value="{{profile.industry}}"/>
+                            <input type="text" id="industry-profile" value="{{profile.industry}}" />
                         </div>
 
                     </div>
@@ -137,7 +137,7 @@
 
                         <div class="mx-2">
                             <label for="school-profile">School</label>
-                            <input type="text" id="school-profile" value="{{profile.education}}"/>
+                            <input type="text" id="school-profile" value="{{profile.education}}" />
                         </div>
                     </div>
                     <div class=" mx-2 px-5 my-3 border py-4 bg-white">
@@ -148,14 +148,14 @@
                         </div>
 
                     </div>
-                
+
                     <div class="create-button">
                         <button type="submit">Create</button>
                     </div>
                     {{/unless}}
                 </form>
             </div>
-  
+
         </div>
     </div>
     <div class="jobs">
