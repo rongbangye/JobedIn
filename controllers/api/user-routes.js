@@ -68,7 +68,7 @@ router.post("/", (req, res) => {
     password: req.body.password,
   })
     .then((dbUserData) => {
-      // console.log("hello");
+      console.log("hello");
       res.json(dbUserData);
     })
     .catch((err) => {
