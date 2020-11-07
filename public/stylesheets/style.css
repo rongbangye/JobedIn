@@ -8,6 +8,8 @@
   --bgc-one: #0e2138;
   --bgc-two: #467dc1;
   --bgc-three: #acd1ff;
+  --bgc-light: #dce4eb;
+  --btn-color1: #3c74c4;
 }
 
 * {
@@ -19,7 +21,7 @@ html {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
+  font-family: "lato";
   color: #333;
   font-size: 16px;
 }
@@ -50,7 +52,7 @@ button {
   border: 0;
   padding: 0.5rem 1.3rem;
   color: white;
-  transition:0.1s;
+  transition: 0.1s;
   cursor: pointer;
 }
 
@@ -78,7 +80,7 @@ input:focus {
 
 textarea {
   min-width: 70%;
-  min-height: 100px;
+  min-height: 50px;
 }
 
 form > div {
@@ -210,14 +212,6 @@ main {
   color: #3486eb;
 }
 
-.delete-post-btn {
-  background-color: #d41414;
-}
-
-.delete-post-btn:hover {
-  background-color: #ff643d;
-}
-
 .post {
   margin-bottom: 2%;
   line-height: 150%;
@@ -257,14 +251,38 @@ main {
   padding: 0.5rem 1rem;
   /* border-radius: 0.5rem; */
 }
-.create-new-post {
-  margin: 0 2rem;
-  /* border:1px solid rgb(182, 182, 182); */
-  box-shadow: 0 0 10px 1px rgba(187, 189, 196, 0.418);
+/*  ====   Create  NEW POST */
 
-  padding: 0.5rem 1rem;
-  background-color: #fff;
-  border-radius: 0.5rem;
+.create-new-post {
+  margin: 2rem 0;
+  /* border:1px solid rgb(211, 211, 211);  */
+  box-shadow: 0 0 4px 1px rgba(164, 193, 199, 0.418);
+  padding: 3rem;
+  border-radius: 0.3rem;
+}
+.create-new-post h5 {
+  margin-bottom: 2rem;
+  /* font-size:.9rem; */
+}
+.create-new-post button {
+  border-radius: 5rem;
+  padding: 0.2rem 1.4rem;
+  background-color: var(--bgc-light);
+  color: var(--btn-color1);
+  font-size: 0.9rem;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+.create-new-post button:hover {
+  background-color: var(--bgc-two);
+  color: white;
+}
+
+.new-post-form input {
+  padding: 0.4rem 1.4rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  width: 60%;
 }
 .your-posts {
   margin: 1rem;
@@ -405,6 +423,17 @@ main {
 
 .comment-form {
   margin-bottom: 5%;
+  text-align: center;
+}
+.comment-form input {
+  width: 70%;
+  background-color: white;
+  border-radius: 15rem;
+  padding: 1.3rem 1rem;
+  margin: 2rem auto;
+  height: 2rem !important;
+  box-shadow: 0px 0px 5px 0px rgb(199, 198, 198);
+  color: rgb(80, 80, 80);
 }
 .comments {
   background-color: rgb(255, 255, 255);
@@ -432,7 +461,7 @@ main {
   color: white;
 }
 
-.comment-body {
+.comment-form .comment-body {
   width: 95%;
   background-color: var(--primary-color);
   border-radius: 0.5rem;
@@ -451,26 +480,46 @@ main {
 .comment-info {
   font-size: 0.8rem;
 }
-.new-post-form {
-  background-color: #fff;
-  padding: 1rem;
-}
 
 .new-post-form input {
   /* width: 300px; */
 }
 .edit-form-container {
-  background-color: #fff;
-  padding: 0.5rem 1rem;
+  /* margin: 2rem 0; */
+  /* border:1px solid rgb(211, 211, 211);  */
+  box-shadow: 0 0 4px 1px rgba(164, 193, 199, 0.418);
+  padding: 2rem 8rem;
+  width: 70%;
+  margin: 3rem auto;
   border-radius: 0.5rem;
-  margin-top: 0.8rem;
-  box-shadow: 0 0 10px 1px rgba(187, 189, 196, 0.418);
 }
-.edit-form-container form div {
-  margin-bottom: 3rem;
+.edit-form-container h5 {
+  margin-bottom: 2rem;
+  /* font-size:.9rem; */
 }
-.edit-post-form {
-  margin-bottom: 5%;
+.edit-form-container button {
+  border-radius: 5rem;
+  padding: 0.2rem 1.4rem;
+  background-color: var(--bgc-light);
+  color: var(--btn-color1);
+  font-size: 0.9rem;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+.edit-form-container button:hover {
+  background-color: var(--bgc-two);
+  color: white;
+}
+.edit-form-container .delete-post-btn{
+  color:rgb(250, 41, 41);
+  background-color: rgb(255, 234, 234);
+}
+
+.edit-form-container input {
+  padding: 0.4rem 1.4rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  width: 60%;
 }
 
 footer {
