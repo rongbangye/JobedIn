@@ -19,6 +19,12 @@ const userData = [
     password: "p@ssword3",
     picture_url: "uploads/defaultPic.jpg",
   },
+  {
+    username: "solo",
+    email: "solo@gmail.com",
+    password: "solo",
+    picture_url: "uploads/defaultPic.jpg",
+  },
 ];
 
 const seedUsers = () => User.bulkCreate(userData);
