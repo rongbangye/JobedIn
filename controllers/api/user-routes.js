@@ -1,33 +1,6 @@
 const router = require("express").Router();
 const { User, Profile } = require("../../models");
-const multer = require("multer");
 const withAuth = require("../../utils/auth");
-
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./uploads/");
-  },
-  filename: function (req, file, cb) {
-    cb(null, new Date().toISOString() + file.originalname);
-  },
-});
-
-const fileFilter = (req, file, cb) => {
-  // reject a file
-  if (file.mimetype === "image/jpeg" || file.mimetype === "image/png") {
-    cb(null, true);
-  } else {
-    cb(new Error("Please upload jpeg or png type of image"), false);
-  }
-};
-
-const upload = multer({
-  storage: storage,
-  limits: {
-    fileSize: 1024 * 1024 * 5,
-  },
-  fileFilter: fileFilter,
-});
 
 // GET api/users
 router.get("/", (req, res) => {
@@ -57,6 +30,13 @@ router.get("/:id", (req, res) => {
         model: Profile,
         attributes: [
           "id",
+          "picture_url",
+          "first_name",
+          "last_name",
+          "city",
+          "state",
+          "country",
+          "zip_code",
           "skills",
           "education",
           "experience",
@@ -81,22 +61,19 @@ router.get("/:id", (req, res) => {
 });
 
 // POST /api/users
-router.post("/", upload.single("picture_url"), (req, res) => {
-  console.log(req.file);
+router.post("/", (req, res) => {
   User.create({
     username: req.body.username,
     email: req.body.email,
     password: req.body.password,
-    picture_url: req.file.path,
-  }).then((dbUserData) => {
-    req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.loggedIn = true;
-
+  })
+    .then((dbUserData) => {
+      // console.log("hello");
       res.json(dbUserData);
+    })
+    .catch((err) => {
+      res.status(500).json(err);
     });
-  });
 });
 
 // POST /api/users/login

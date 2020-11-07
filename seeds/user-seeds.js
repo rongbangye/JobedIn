@@ -5,19 +5,19 @@ const userData = [
     username: "lisa",
     email: "lisa@gmail.com",
     password: "p@ssword1",
-    picture_url: "uploads/2020-11-02T09:26:49.859Zavatar.png",
+    picture_url: "uploads/defaultPic.jpg",
   },
   {
     username: "rose",
     email: "rose@gmail.com",
     password: "p@ssword2",
-    picture_url: "uploads/2020-11-02T09:26:49.859Zavatar.png",
+    picture_url: "uploads/defaultPic.jpg",
   },
   {
     username: "rich",
     email: "rich@gmail.com",
     password: "p@ssword3",
-    picture_url: "uploads/2020-11-02T09:26:49.859Zavatar.png",
+    picture_url: "uploads/defaultPic.jpg",
   },
 ];
 

@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Profile, Post, User } = require("../../models");
+const withAuth = require("../../utils/auth");
 
 // Get /profiles/:id
 router.get("/:id", (req, res) => {
@@ -9,11 +10,19 @@ router.get("/:id", (req, res) => {
     },
     attributes: [
       "id",
+      "picture_url",
+      "first_name",
+      "last_name",
+      "city",
+      "state",
+      "country",
+      "zip_code",
       "skills",
       "education",
       "experience",
       "industry",
       "interest",
+      "user_id",
       "created_at",
       "updated_at",
     ],
@@ -31,31 +40,51 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// Post /profiles
+// Create a profile
 router.post("/", (req, res) => {
   Profile.create({
+    // picture_url: req.file.path,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    city: req.body.city,
+    state: req.body.state,
+    country: req.body.country,
+    zip_code: req.body.zip_code,
     skills: req.body.skills,
     education: req.body.education,
     experience: req.body.experience,
     industry: req.body.industry,
     interest: req.body.interest,
-    user_id: req.body.user_id,
+    user_id: req.session.user_id,
   })
-    .then((dbPostData) => res.json(dbPostData))
+    .then((dbProfileData) => {
+      req.session.save(() => {
+        // declare session variables
+        req.session.hasProfile = true;
+
+        res.json(dbProfileData);
+      });
+    })
     .catch((err) => {
       res.status(500).json(err);
     });
 });
 
-// Put/Update profile
+// Update profile
 router.put("/:id", (req, res) => {
   Profile.update(
     {
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      city: req.body.city,
+      state: req.body.state,
+      country: req.body.country,
+      zip_code: req.body.zip_code,
       skills: req.body.skills,
+      industry: req.body.industry,
       education: req.body.education,
       experience: req.body.experience,
-      industry: req.body.industry,
-      interest: req.body.interest,
+      user_id: req.session.user_id,
     },
     {
       where: {

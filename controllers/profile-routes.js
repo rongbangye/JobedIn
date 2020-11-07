@@ -1,20 +1,73 @@
-const router = require('express').Router();
+const router = require("express").Router();
+const { User, Profile } = require("../models");
+const sequelize = require("../config/connection");
+const withAuth = require("../utils/auth");
 
-
-router.get('/', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
-  res.render('profile');
+router.get("/", withAuth, (req, res) => {
+  console.log(req.session);
+  Profile.findAll({
+    where: {
+      user_id: req.session.user_id,
+    },
+    attributes: [
+      "first_name",
+      "last_name",
+      "picture_url",
+      "city",
+      "state",
+      "zip_code",
+      "country",
+      "skills",
+      "industry",
+      "education",
+      "experience",
+    ],
+  })
+    .then((dbProfileData) => {
+      const profiles = dbProfileData.map((profile) =>
+        profile.get({ plain: true })
+      );
+      console.log(profiles);
+      const user = req.session;
+      res.render("profile", { profiles, user });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 // edit profile
-router.get('/edit-profile/:id', (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
-    return;
-  }
-  res.render('edit-profile');
+router.get("/edit-profile/:id", (req, res) => {
+  Profile.findAll({
+    where: {
+      id: req.params.id,
+    },
+    attributes: [
+      "first_name",
+      "last_name",
+      "picture_url",
+      "city",
+      "state",
+      "zip_code",
+      "country",
+      "skills",
+      "industry",
+      "education",
+      "experience",
+    ],
+  })
+    .then((dbProfileData) => {
+      const profiles = dbProfileData.map((profile) =>
+        profile.get({ plain: true })
+      );
+      console.log(profiles);
+      const user = req.session;
+      res.render("edit-profile", { profiles, user });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 // edit post
 router.get('/edit-post/:id', (req, res) => {

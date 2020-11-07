@@ -11,49 +11,53 @@ Profile.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    picture_url: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     first_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     last_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     city: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     state: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     country: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     zip_code: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     skills: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     education: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     experience: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     industry: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     interest: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,
