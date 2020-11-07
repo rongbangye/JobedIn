@@ -29,7 +29,7 @@ router.get("/", withAuth, (req, res) => {
       );
       console.log(profiles);
       const user = req.session;
-      res.render("profile", { profiles, user });
+      res.render("profile", { profiles, user, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);
@@ -62,7 +62,11 @@ router.get("/edit-profile/:id", (req, res) => {
       );
       console.log(profiles);
       const user = req.session;
-      res.render("edit-profile", { profiles, user });
+      res.render("edit-profile", {
+        profiles,
+        user,
+        loggedIn: req.session.loggedIn,
+      });
     })
     .catch((err) => {
       console.log(err);
