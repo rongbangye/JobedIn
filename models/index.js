@@ -27,6 +27,15 @@ Post.belongsToMany(User, {
   foreignKey: "post_id",
 });
 
+// added Profile with Post
+Profile.hasMany(Post, {
+  foreignKey: "user_id",
+});
+
+Post.belongsTo(Profile, {
+  foreignKey: "user_id",
+});
+
 Vote.belongsTo(Post, {
   foreignKey: "post_id",
   onDelete: "SET NULL",
