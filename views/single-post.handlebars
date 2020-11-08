@@ -1,11 +1,16 @@
 {{!---- post-info partials -----}}
-{{> post-info post}}
+<section class="post-comment-list">
+    {{> post-info post}}
+
+
+
+
 
 
 {{!-- {{#if loggedIn}} --}}
 <form class="comment-form">
     <div>
-        <textarea name="comment-body"></textarea>
+        <input name="comment-body" placeholder="Write a comment" />
     </div>
 
     <div>
@@ -17,6 +22,8 @@
 
 {{!-- comment partials  --}}
 {{> comments post.comments}}
+
+</section>
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>

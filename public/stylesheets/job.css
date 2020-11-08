@@ -12,7 +12,7 @@
     ),
     url("../assets/image/profile-bg-2.png");
   background-size: cover;
-  height: 40vh;
+  height: 50vh;
   width: 100%;
   text-align: center;
 }
@@ -65,6 +65,7 @@
 }
 .btn-job-search:hover {
   background-color: rgb(188, 219, 221);
+  color:black;
 }
 .home-job-list-container {
   padding: 1rem 3rem;

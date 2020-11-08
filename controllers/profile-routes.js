@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Profile, Post } = require("../models");
+const { User, Profile, Post ,Comment} = require("../models");
 const sequelize = require("../config/connection");
 const withAuth = require("../utils/auth");
 
@@ -33,7 +33,7 @@ router.get("/", withAuth, (req, res) => {
         where: {
           user_id: req.session.user_id,
         },
-        attributes: ["title", "content", "created_at"],
+        attributes: ["id","title", "content", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -103,7 +103,7 @@ router.get("/edit-post/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "post_content", "title", "created_at"],
+    attributes: ["id", "content", "title", "created_at"],
     include: [
       {
         model: Comment,
