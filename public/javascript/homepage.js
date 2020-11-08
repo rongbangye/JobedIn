@@ -70,18 +70,18 @@ const saveToLocalStorage = function (language, city) {
 //----- FUNCTION- LOAD PAGE ------------------------------------------------
 
 const loadPage = function () {
-  // get the last searched country name from localstorage
-  var lastSearchedCity = localStorage.getItem("searchedCity");
-  var lastSearchedLanguage = localStorage.getItem("searchedLanguage");
-
-  // get the data for the last searched country
-  if (lastSearchedCity && lastSearchedLanguage) {
-    searchJob(lastSearchedLanguage, lastSearchedCity);
-  } else {
-    searchJob("java", "sanfrancisco");
-  }
-  // if there was no searched country before search for USA
-};
-// loadPage();
+    // get the last searched country name from localstorage
+    var lastSearchedCity = localStorage.getItem("searchedCity");
+    var lastSearchedLanguage = localStorage.getItem("searchedLanguage");
+  
+    // get the data for the last searched country
+    if (lastSearchedCity&& lastSearchedLanguage) {
+      searchJob(lastSearchedLanguage,lastSearchedCity);
+    } else {
+      searchJob("java","sanfrancisco");
+    }
+    // if there was no searched country before search for USA
+  };
+loadPage();
 
 searchBtn.addEventListener("submit", formSubmitHandler);
