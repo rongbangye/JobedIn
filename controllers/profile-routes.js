@@ -33,7 +33,7 @@ router.get("/", withAuth, (req, res) => {
         where: {
           user_id: req.session.user_id,
         },
-        attributes: ["title", "content", "created_at"],
+        attributes: ["id", "title", "content", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
