@@ -91,6 +91,6 @@ const loadPage = function () {
     }
     // if there was no searched country before search for USA
   };
-// loadPage();
+loadPage();
 
 searchBtn.addEventListener('submit',formSubmitHandler)

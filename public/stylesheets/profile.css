@@ -33,14 +33,16 @@
 
 }
 .profile-pic {
-  background-image: url("../assets/image/profile-pic.jpg");
+  background-image: url("../assets/image/profile-pic2.png");
   background-size: cover;
-  height: 10rem;
-  width: 10rem;
+  height: 8rem;
+  width: 8rem;
   border-radius: 50%;
   border: 3px solid white;
-  margin-top: -6rem;
-  /* margin-left: 2rem; */
+  margin-top: -5rem;
+  /* font-size:4rem; */
+  /* background-color: rgb(209, 204, 204); */
+  
 }
 .profile-info-container h5 {
   color: rgb(71, 71, 71);
