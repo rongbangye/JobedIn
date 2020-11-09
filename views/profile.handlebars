@@ -41,27 +41,6 @@
         {{!-- =========================================== --}}
 
         {{!-- Added Post by the user in Profile page --}}
-<<<<<<< HEAD
-        <ul class="post-list">
-            {{#each posts as |post|}}
-            <li>
-                <article class="post">
-                    <div class="title">
-                        <div class="title-heading"><a href="/post/{{post.id}}">{{post.title}}</a></div>
-                        <div class="title-info"> Posted By: {{post.user.username}} 
-                            {{format_date post.created_at}} 
-                    </div>
-
-                    </div>
-                    <div class="meta">
-                        <p>{{post.content}}</p>
-
-                    </div>
-                </article>
-            </li>
-            {{/each}}
-        </ul>
-=======
 
 
         {{#if posts.length}}
@@ -94,7 +73,6 @@
             </ul>
         </section>
         {{/if}}
->>>>>>> feature/post-render
     </div>
 
 
