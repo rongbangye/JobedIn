@@ -57,6 +57,7 @@ button {
   color: white;
   transition: 0.1s;
   cursor: pointer;
+  border-radius: 5rem;
 }
 
 button:hover {
@@ -112,9 +113,12 @@ header {
 }
 .logo a {
   color: rgb(111, 201, 243);
+  color: rgb(30, 188, 216);
   align-content: center;
   align-items: center;
   vertical-align: middle;
+  font-size: 1.5rem;
+  font-family: "Goldman", "lato", san-serif;
 }
 /* .logo span {   
   color: var(--bgc-one);
@@ -135,12 +139,16 @@ header nav a {
   font-size: 0.9rem;
 }
 #logout {
-  color: rgb(71, 71, 71) !important;
-  border-radius: 0.2rem;
+  color: rgb(223, 227, 230) !important;
+  padding: 0.3rem 1rem;
+  font-weight: lighter;
+  background-color: rgb(57, 63, 100);
+  border-radius: 5rem;
+  font-size: 0.9rem;
+}
+#logout:hover {
   background-color: rgb(46, 224, 126);
-  padding: 0.4rem 1rem;
-  font-weight: bold;
-  font-size: 0.8rem;
+  color: black !important;
 }
 #login {
   color: rgb(71, 71, 71) !important;
@@ -148,7 +156,7 @@ header nav a {
   background-color: rgb(46, 224, 126);
   padding: 0.4rem 1rem;
   font-weight: bold;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 main {
@@ -283,14 +291,12 @@ main {
 
 .create-new-post {
   margin: 2rem 0;
-  /* border:1px solid rgb(211, 211, 211);  */
   box-shadow: 0 0 4px 1px rgba(164, 193, 199, 0.418);
   padding: 3rem;
   border-radius: 0.3rem;
 }
 .create-new-post h5 {
   margin-bottom: 2rem;
-  /* font-size:.9rem; */
 }
 .create-new-post button {
   /* border-radius: 5rem; */
@@ -320,7 +326,7 @@ main {
   margin: 2rem 0;
   /* border:1px solid rgb(211, 211, 211);  */
   box-shadow: 0 0 4px 1px rgba(164, 193, 199, 0.418);
-  padding: 3rem 1.3rem;
+  padding: 3rem;
   border-radius: 0.3rem;
 }
 .your-posts li {
@@ -328,7 +334,7 @@ main {
 }
 .your-posts h5 {
   margin-bottom: 2rem;
-  padding: 0 1.3rem;
+  /* padding: 0 1.3rem; */
 }
 
 /* =========== LOGIN - FORM =============== */
@@ -478,9 +484,8 @@ main {
   background-color: rgb(255, 255, 255);
   padding: 1rem;
   border: 1px solid rgb(211, 210, 210);
-
+  margin-bottom: 1rem;
   border-radius: 0.5rem;
-
 }
 .comment {
   padding: 0.5rem;
@@ -499,16 +504,15 @@ main {
   align-items: center;
   text-align: center;
   color: white;
-  margin-right:.6rem;
+  margin-right: 0.6rem;
 }
 
 .comment-body {
   width: 93%;
   /* background-color: var(--primary-color); */
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0.4rem 1rem;
   border: 1px solid rgb(211, 210, 210);
-  
 }
 
 .comment .meta {
@@ -528,12 +532,10 @@ main {
   /* width: 300px; */
 }
 .edit-form-container {
-  /* margin: 2rem 0; */
-  /* border:1px solid rgb(211, 211, 211);  */
   box-shadow: 0 0 4px 1px rgba(164, 193, 199, 0.418);
   padding: 2rem 8rem;
-  width: 70%;
-  margin: 3rem auto;
+
+  margin: 1rem auto;
   border-radius: 0.5rem;
 }
 .edit-form-container h5 {
@@ -566,7 +568,7 @@ main {
   padding: 0.4rem 1.4rem;
   border-radius: 1rem;
   font-size: 0.9rem;
-  width: 60%;
+  width: 100%;
 }
 
 footer {
@@ -575,13 +577,11 @@ footer {
   justify-content: center;
   padding: 2rem;
   font-size: 110%;
+  background-color: var(--bgc-one);
 }
 footer div {
-  height: 2rem;
-  width: 2rem;
+  color:rgb(189, 190, 196);
   padding: 0.4rem;
-  border-radius: 50%;
-  border: 1px solid black;
   font-size: 0.9rem;
   display: flex;
   justify-content: center;
@@ -609,6 +609,11 @@ footer div {
     width: 60%;
     padding: 2rem 1rem;
   }
+  .post-comment-list {
+    margin: 2rem auto;
+    padding: 0 1rem;
+    width: 92%;
+  }
 }
 @media only screen and (max-width: 620px) {
   .login-form {
@@ -620,6 +625,9 @@ footer div {
   header nav a {
     margin-right: 1rem;
     font-size: 0.9rem;
+  }
+  .edit-form-container {
+    padding: 2rem;
   }
 }
 @media only screen and (max-width: 420px) {

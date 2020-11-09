@@ -11,7 +11,7 @@ var searchJob = function (language, city) {
   fetch(proxyurl + apiURL)
     .then((response) => {
       return response.json();
-    })
+    })  
     .then((data) => {
       displayJob(data.results);
     });

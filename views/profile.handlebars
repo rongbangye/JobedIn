@@ -1,22 +1,47 @@
 <div class="row ">
-    <div class="profile  ">
+    <div class="profile col-lg-8 col-sm-12 col-12">
         <div class="profile-image-container"></div>
         <div class="profile-info-container bg-light">
             <div class="profile-pic"></div>
-            
+
             <div class="profile-info">
                 <div>
                     {{!-- <h4>{{user.username}}</h4> --}}
                     {{#each profiles as |profile|}}
                     <h4>{{upperCaseFirst profile.first_name}} {{upperCaseFirst profile.last_name}}</h4>
 
-                    <p><span class="mr-3"><i class="fas fa-map-marker-alt"></i></span>{{upperCaseFirst profile.city}}
+
+
+                    <p><span class="profile-list-icon"><i class="fas fa-home"></i></span>
+                        <span class="profile-info-list">Lives in :</span>{{upperCaseFirst profile.city}}
                         ,{{upperCaseFirst profile.state}},
                         {{upperCaseFirst profile.country}}
+
                     </p>
-                    <p><span class="mr-2"><i class="fas fa-graduation-cap"></i></span>Attended: {{profile.education}}
-                    </p>
-                    <p><span class="mr-2"><i class="fas fa-cogs"></i></span>Skills: {{profile.skills}}</p>
+                    {{#if profile.education}}
+                    <p><span class="profile-list-icon"><i class="fas fa-user-graduate"></i></span>
+                        <span class="profile-info-list">Attended :</span> {{profile.education}}
+
+                    </p>{{/if}}
+                    {{#if profile.skills}}
+                    <p><span class="profile-list-icon"><i class="fas fa-tools"></i></span>
+                        <span class="profile-info-list">Skills:</span> {{profile.skills}}
+
+                    </p>{{/if}}
+                    {{#if profile.industry}}
+                    <p><span class="profile-list-icon"><i class="fas fa-industry"></i></span>
+                        <span class="profile-info-list">Industry :</span> {{profile.industry}}
+
+                    </p>{{/if}}
+                    {{#if profile.experience}}
+                    <p><span class="profile-list-icon"><i class="fab fa-buffer"></i></span>
+                        <span class="profile-info-list">EXPERIENCE :</span>{{profile.experience}}
+                    </p>{{/if}}
+
+                    {{#if profile.interest}}
+                    <p><span class="profile-list-icon"><i class="fas fa-certificate"></i></span>
+                        <span class="profile-info-list">Interests :</span> {{profile.interest}}
+                    </p>{{/if}}
                     {{/each}}
                 </div>
                 <div class="btn-edit-profile">
@@ -76,7 +101,7 @@
     </div>
 
 
-    <div class="jobs">
+    <div class="jobs col-lg-4 col-sm-12 col-12">
 
         <div class="home-jobs" id="profile-jobs">
 

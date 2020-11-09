@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JIn</title>
+    <title>CIn</title>
 
     <!-- bootstrap--- -->
 
@@ -17,7 +17,7 @@
 
     {{!-- <!- google-fonts  --> --}}
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Goldman&display=swap" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@300;400;500&family=Raleway:ital,wght@0,200;0,300;0,400;0,500;1,200;1,300&display=swap"
         rel="stylesheet" />
@@ -31,8 +31,9 @@
         <header>
             <div class="logo">
                 <h1>
-                    <a href="/"> <span class="brand-logo brand-logo-small"><i class="fab fa-connectdevelop"></i></span>
-                    </a>JobedIn
+                    <a href="/"> <span class="brand-logo brand-logo-small"><i class="fab fa-connectdevelop"></i></span> 
+                    Connect<span>In</span>
+                    </a>
                 </h1>
             </div>
 
@@ -40,7 +41,7 @@
                 <a href="/">Home</a>
                 {{#if loggedIn}}
                 <a href="/profile/">Profile</a>
-                <button id="logout" class="btn-no-style">Log Out</button>
+                <button id="logout" class="btn-no-style">Logout</button>
                 {{else}}
                 <a href="/login" id="login">Login</a>
                 {{/if}}
@@ -50,6 +51,8 @@
             {{{ body }}}
         </main>
         <footer>
+            <div>&copy; 2020 ConnectIn</div>
+            
         </footer>
     </div>
 

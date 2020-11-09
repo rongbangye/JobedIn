@@ -30,7 +30,6 @@
 
   padding: 1rem 2rem;
   box-shadow: 0 0 4px 1px rgba(164, 193, 199, 0.418);
-
 }
 .profile-pic {
   background-image: url("../assets/image/profile-pic2.png");
@@ -40,9 +39,9 @@
   border-radius: 50%;
   border: 3px solid white;
   margin-top: -5rem;
+  margin-left:1rem;
   /* font-size:4rem; */
   /* background-color: rgb(209, 204, 204); */
-  
 }
 .profile-info-container h5 {
   color: rgb(71, 71, 71);
@@ -51,19 +50,26 @@
 }
 .profile-info-container p {
   color: rgb(71, 71, 71);
+  padding-left: 1rem;
 }
 .profile-info {
   display: flex;
   justify-content: space-between;
-
-  /*   
-  border:1px solid rgb(211, 211, 211);
-  box-shadow: 0 0 4px 1px rgba(164, 193, 199, 0.418); */
-
   padding: 1rem;
-  /* background-color: #fff; */
   border-radius: 0.2rem;
   margin: 1rem 0;
+}
+.profile-info-list {
+  color: rgb(7, 7, 7);
+}
+.profile-list-icon {
+  height: 100%;
+  margin-right: 1rem;
+  /* padding-right:1rem;  */
+  padding: 0.3rem 0.4rem;
+  color: rgb(160, 160, 160);
+  color: rgb(13, 155, 199);
+  border-radius: 50%;
 }
 .btn-edit-profile {
   margin-top: -2rem;
@@ -72,7 +78,8 @@
   border-radius: 50%;
   height: 2.3rem;
   width: 2.3rem;
-  padding: 0.3rem;
+  padding: 0.5rem;
+  align-items: center;
   text-align: center;
   background-color: rgb(220, 228, 235);
 }
@@ -82,7 +89,6 @@
 .jobs {
   width: 34%;
   margin: 2rem 0rem;
-  /* background-color: rgb(233, 246, 252); */
 }
 
 /* ===================  PROFILE - FORM  ============================================= */
@@ -98,3 +104,52 @@
   margin-bottom: 0.4rem;
   min-width: 260px;
 }
+
+/* ===================  MEDIA QUERY  ============================================= */
+
+@media only screen and (max-width: 800px) {
+  .row {
+    margin: -1rem 1rem !important;
+  }
+  .new-post-form input {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 700px) {
+    .your-posts h5 {
+        margin-bottom: 2rem;
+        /* padding: 0 1.3rem; */
+    }
+    .profile-info-container {
+        padding: 1rem 0;
+    }
+ 
+ 
+}
+@media only screen and (max-width: 500px) {
+  .row {
+    margin: -1rem 0rem !important;
+  }
+  .profile-info-container {
+    padding: 1rem;
+  }
+  .create-new-post {
+    padding: 3rem 1rem;
+  }
+  .your-posts {
+    margin: 2rem 0;
+    padding: 3rem 1rem;
+  }
+
+.profile-info {
+    padding: 1rem 0;
+    margin: 1rem 0;
+}
+}
+@media only screen and (max-width: 400px) {
+
+.profile-info-container p {
+    color: rgb(71, 71, 71);
+    padding-left: 1rem;
+    font-size:.9rem;
+}}

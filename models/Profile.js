@@ -40,15 +40,15 @@ Profile.init(
       allowNull: true,
     },
     skills: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     education: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     experience: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     industry: {
@@ -56,7 +56,7 @@ Profile.init(
       allowNull: true,
     },
     interest: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: true,
     },
     user_id: {

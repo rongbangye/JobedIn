@@ -78,6 +78,7 @@ router.get("/edit-profile/:id", (req, res) => {
       "industry",
       "education",
       "experience",
+      "interest"
     ],
   })
     .then((dbProfileData) => {
