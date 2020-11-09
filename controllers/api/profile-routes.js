@@ -29,7 +29,7 @@ router.get("/:id", (req, res) => {
     include: [
       {
         model: Post,
-        attributes: ["id",  "title", "content"],
+        attributes: ["id", "title", "content"],
       },
     ],
   })
@@ -90,7 +90,7 @@ router.put("/:id", (req, res) => {
       industry: req.body.industry,
       education: req.body.education,
       experience: req.body.experience,
-    interest: req.body.interest,
+      interest: req.body.interest,
       user_id: req.session.user_id,
     },
     {

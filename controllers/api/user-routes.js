@@ -68,8 +68,29 @@ router.post("/", (req, res) => {
     password: req.body.password,
   })
     .then((dbUserData) => {
-      console.log("hello");
-      res.json(dbUserData);
+      Profile.create({
+        // picture_url: req.file.path,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        city: req.body.city,
+        state: req.body.state,
+        country: req.body.country,
+        zip_code: req.body.zip_code,
+        skills: req.body.skills,
+        education: req.body.education,
+        experience: req.body.experience,
+        industry: req.body.industry,
+        interest: req.body.interest,
+        user_id: req.session.user_id,
+      }).then((dbProfileData) => {
+        req.session.save(() => {
+          // declare session variables
+          req.session.hasProfile = true;
+
+          res.json(dbProfileData);
+          res.json(dbUserData);
+        });
+      });
     })
     .catch((err) => {
       res.status(500).json(err);
