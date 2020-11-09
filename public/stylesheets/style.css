@@ -580,7 +580,7 @@ footer {
   background-color: var(--bgc-one);
 }
 footer div {
-  color:rgb(189, 190, 196);
+  color: rgb(189, 190, 196);
   padding: 0.4rem;
   font-size: 0.9rem;
   display: flex;
@@ -614,6 +614,20 @@ footer div {
     padding: 0 1rem;
     width: 92%;
   }
+  .welcome-container {
+    height: 135vh;
+    display: block;
+  }
+  .login-form {
+    width: 50%;
+    padding: 2rem 1rem;
+    margin: 3rem auto;
+  }
+  .signup-form {
+    width: 50%;
+    padding: 2rem 1rem;
+    margin: 3rem auto;
+  }
 }
 @media only screen and (max-width: 620px) {
   .login-form {
@@ -629,8 +643,21 @@ footer div {
   .edit-form-container {
     padding: 2rem;
   }
+  .login-form {
+    width: 70%;
+    padding: 2rem 1rem;
+    margin: 3rem auto;
+  }
+  .signup-form {
+    width: 70%;
+    padding: 2rem 1rem;
+    margin: 3rem auto;
+  }
 }
 @media only screen and (max-width: 420px) {
+  .welcome-container {
+    height: 155vh;
+  }
   .login-form {
     width: 94%;
   }

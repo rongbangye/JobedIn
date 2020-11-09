@@ -31,7 +31,7 @@ const displayJob = function (jobs) {
               <p class="company-name">${job.company.display_name}</p>
         </div>
         
-        <div><a href="${job.redirect_url}">Apply</a></div>
+        <div><a href="${job.redirect_url}" target="_blank">Apply</a></div>
          
         </div>
         <div>

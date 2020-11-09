@@ -1,32 +1,34 @@
-# JOBEDIN
+# ConnectIn
 
 [![Heroku](https://img.shields.io/badge/Deployed_App-Heroku-52A55D.svg)](https://fathomless-stream-49781.herokuapp.com/)  
-Jobedin is a network, designed to connect your professional identity with opportunities.
+ConnectIn is a network, designed to connect your professional identity with opportunities.
 
 # Description
 
-:dart: Jobedin is a RESTful API app, follows an MVC paradigm in its architectural structure.
+:dart: ConnectIn is a RESTful API app, follows an MVC paradigm in its architectural structure.
 
 Users can sign up safely to create a profile.  
-Users can login to profile, and demonstrate their information, skills and background.  
-Users can post job opportunities, and leave comments and votes on other posts.
+User can search for a job using location and technologies or description.
+Users can login to profile, and demonstrate their information, skills ,exprience,interests and background.  
+Users can post any post, and leave comments.
 
 ## Table of Contents
 
-- [Visuals](#Demo)
+- [Visuals](#Visuals)
 - [Installation](#Installation)
 - [Dependencies](#Dependencies)
 - [Reach Us](#Reach-Us)
 - [Contribution](#Contribution)
 - [Test](#Test)
 
-# Demo
-:movie_camera:     
+<!-- # Demo
+
+:movie_camera:  
 ![homepage](/uploads/home.png)
 
 ![login](/uploads/login.png)
 
-![profile](/uploads/profile.png)
+![profile](/uploads/profile.png) -->
 
 # Installation
 
@@ -49,6 +51,8 @@ In the integrated terminal, seed `npm run seed` and start using `npm start` app 
 - Bcrypt
 - multer
 - heroku
+- Bootstrap
+- Adzuna Job Api
 
 # license
 
@@ -71,11 +75,26 @@ npm install
 npm run start
 ```
 
-## Test
+## Visuals
+### LARGE SCREEN SIZE
 
-```javascript
-npm run test
-```
+<img src="./public/assets/image/screenshot-1.png" alt="large-screen app" width="700px"/>
+<img src="./public/assets/image/screenshot-2.png" alt="large-screen app" width="700px"/>
+<img src="./public/assets/image/screenshot-3.png" alt="large-screen app" width="700px"/>
+<img src="./public/assets/image/screenshot-4.png" alt="large-screen app" width="700px"/>
+<img src="./public/assets/image/screenshot-5.png" alt="large-screen app" width="700px"/>
+<img src="./public/assets/image/screenshot-6.png" alt="large-screen app" width="700px"/>
+
+
+### SMALL SCREEN SIZE
+
+<img src="./public/assets/image/screenshot-7.png" alt="large-screen app" width="400px"/>
+<img src="./public/assets/image/screenshot-8.png" alt="large-screen app" width="400px"/>
+<img src="./public/assets/image/screenshot-9.png" alt="large-screen app" width="400px"/>
+<img src="./public/assets/image/screenshot-10.png" alt="large-screen app" width="400px"/>
+
+
+### ©️2020 ConnectIn
 
 <!-- MySQL Schema:
 
