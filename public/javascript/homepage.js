@@ -4,9 +4,10 @@ const jobsEL = document.querySelector(".home-jobs");
 const searchBtn = document.querySelector("#search-form");
 const locationEL = document.querySelector("#location");
 const languageEL = document.querySelector("#language");
+const {APP_ID,API_KEY} = config;
 
 var searchJob = function (language, city) {
-  const apiURL = `http://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${config.APP_ID}&app_key=${config.API_KEY}&results_per_page=10&what=${language}%20developer&where=${city}&content-type=application/json`;
+  const apiURL = `http://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${APP_ID}&app_key=${API_KEY}&results_per_page=10&what=${language}%20developer&where=${city}&content-type=application/json`;
 
   fetch(proxyurl + apiURL)
     .then((response) => {
