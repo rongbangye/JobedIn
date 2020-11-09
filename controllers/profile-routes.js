@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { User, Profile, Post ,Comment} = require("../models");
+const { User, Profile, Post, Comment } = require("../models");
 const sequelize = require("../config/connection");
 const withAuth = require("../utils/auth");
 
@@ -33,7 +33,7 @@ router.get("/", withAuth, (req, res) => {
         where: {
           user_id: req.session.user_id,
         },
-        attributes: ["id","title", "content", "created_at"],
+        attributes: ["id", "title", "content", "created_at"],
         include: {
           model: User,
           attributes: ["username"],
@@ -64,8 +64,7 @@ router.get("/", withAuth, (req, res) => {
 router.get("/edit-profile/:id", (req, res) => {
   Profile.findAll({
     where: {
-      // id: req.params.id,
-      user_id:req.session.user_id
+      id: req.params.id,
     },
     attributes: [
       "first_name",
@@ -79,7 +78,7 @@ router.get("/edit-profile/:id", (req, res) => {
       "industry",
       "education",
       "experience",
-      "interest"
+      "interest",
     ],
   })
     .then((dbProfileData) => {

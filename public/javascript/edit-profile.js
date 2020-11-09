@@ -14,8 +14,6 @@ async function profileHandler(event) {
   const experience = document.querySelector("#exprience-profile").value.trim();
   const interest = document.querySelector("#interest-profile").value.trim();
 
-
-
   const profileID = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
@@ -65,7 +63,6 @@ async function createProfilerHandler(event) {
   const experience = document.querySelector("#exprience-profile").value.trim();
   const interest = document.querySelector("#interest-profile").value.trim();
 
-
   const profileID = window.location.toString().split("/")[
     window.location.toString().split("/").length - 1
   ];
@@ -83,7 +80,7 @@ async function createProfilerHandler(event) {
       industry,
       education,
       experience,
-      interest
+      interest,
     }),
     headers: {
       "Content-Type": "application/json",
