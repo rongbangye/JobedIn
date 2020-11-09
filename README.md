@@ -1,6 +1,6 @@
 # JOBEDIN
 
-[![Heroku](https://img.shields.io/badge/Deployed_App-Heroku-52A55D.svg)](https://)  
+[![Heroku](https://img.shields.io/badge/Deployed_App-Heroku-52A55D.svg)](https://fathomless-stream-49781.herokuapp.com/)  
 Jobedin is a network, designed to connect your professional identity with opportunities.
 
 # Description
@@ -25,6 +25,8 @@ Users can post job opportunities, and leave comments and votes on other posts.
 ![homepage](/uploads/home.png)
 
 ![login](/uploads/login.png)
+
+![profile](/uploads/profile.png)
 
 # Installation
 
