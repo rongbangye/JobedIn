@@ -3,15 +3,16 @@
         <div class="profile-image-container"></div>
         <div class="profile-info-container bg-light">
             <div class="profile-pic"></div>
+            
             <div class="profile-info">
                 <div>
                     {{!-- <h4>{{user.username}}</h4> --}}
                     {{#each profiles as |profile|}}
-                    <h4>{{profile.first_name}} {{profile.last_name}}</h4>
+                    <h4>{{upperCaseFirst profile.first_name}} {{upperCaseFirst profile.last_name}}</h4>
 
-                    <p><span class="mr-3"><i class="fas fa-map-marker-alt"></i></span>{{profile.city}}
-                        ,{{profile.state}},
-                        {{profile.country}}
+                    <p><span class="mr-3"><i class="fas fa-map-marker-alt"></i></span>{{upperCaseFirst profile.city}}
+                        ,{{upperCaseFirst profile.state}},
+                        {{upperCaseFirst profile.country}}
                     </p>
                     <p><span class="mr-2"><i class="fas fa-graduation-cap"></i></span>Attended: {{profile.education}}
                     </p>
@@ -37,8 +38,41 @@
             </form>
 
         </section>
+        {{!-- =========================================== --}}
 
-        
+        {{!-- Added Post by the user in Profile page --}}
+
+
+        {{#if posts.length}}
+        <section class="your-posts bg-light">
+            <h5>Your Posts</h5>
+            <ul>
+                {{#each posts as |post|}}
+                <li>
+                    <article class="post">
+                        <div class="title">
+
+                            <div class="title-heading"><a href="/post/{{post.id}}">{{post.title}}</a></div>
+
+                            <div class="btn-edit-post"><a href="/profile/edit-post/{{post.id}}" class="edit-link"><i
+                                        class="fas fa-pencil-alt"></i></a></div>
+
+
+                        </div>
+                        <div class="meta">
+                            <p>{{post.content}}</p>
+                        </div>
+                        {{#if comments.length}}
+                        <div><a href="/post/{{post.id}}" id="title-info">{{comments.length}}
+                                {{format_plural "comment" comments.length}}</a></div>
+                        {{/if}}
+                    </article>
+
+                </li>
+                {{/each}}
+            </ul>
+        </section>
+        {{/if}}
     </div>
 
 
@@ -52,7 +86,11 @@
 
     </div>
 
+
+
 </div>
+
+
 
 <script src="/javascript/config.js"></script>
 <script src="/javascript/add-post.js"></script>

@@ -1,8 +1,9 @@
 <div class="comments">
     {{#each this}}
     <section class="comment">
+        {{#if user.username}}
         <div class="comment-avatar">{{get_first user.username}}</div>
-        
+        {{/if}}
         <div class="comment-body">
             <div class="meta">
 

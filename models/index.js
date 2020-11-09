@@ -27,6 +27,15 @@ Post.belongsToMany(User, {
   foreignKey: "post_id",
 });
 
+// added Profile with Post
+Profile.hasMany(Post, {
+  foreignKey: "user_id",
+});
+
+Post.belongsTo(Profile, {
+  foreignKey: "user_id",
+});
+
 Vote.belongsTo(Post, {
   foreignKey: "post_id",
   onDelete: "SET NULL",
@@ -66,6 +75,16 @@ Post.hasMany(Comment, {
   onDelete: "SET NULL",
 });
 
+// Profile.hasMany(Post,{
+//   through: User,
+//   as: "profile_posts",
+//   foreignKey: "user_id",
+
+// })
+
+// Post.belongsTo(Profile,{
+
+// })
 /**
  * Comment out below code
  * Because received error with this:

@@ -1,37 +1,29 @@
-
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
-const containerEl = document.querySelector('.job-container');
-const jobsEL = document.querySelector('.home-jobs');
-const searchBtn = document.querySelector('#search-form');
-const locationEL = document.querySelector('#location');
-const languageEL = document.querySelector('#language');
+const containerEl = document.querySelector(".job-container");
+const jobsEL = document.querySelector(".home-jobs");
+const searchBtn = document.querySelector("#search-form");
+const locationEL = document.querySelector("#location");
+const languageEL = document.querySelector("#language");
 
+var searchJob = function (language, city) {
+  const apiURL = `http://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${config.APP_ID}&app_key=${config.API_KEY}&results_per_page=10&what=${language}%20developer&where=${city}&content-type=application/json`;
 
+  fetch(proxyurl + apiURL)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      displayJob(data.results);
+    });
+};
 
+const displayJob = function (jobs) {
+  // clear area first
+  jobsEL.textContent = "";
 
-var searchJob = function(language,city){
-const apiURL = `http://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${config.APP_ID}&app_key=${config.API_KEY}&results_per_page=10&what=${language}%20developer&where=${city}&content-type=application/json`;
-
-
-fetch(proxyurl+ apiURL)
-.then(response =>{
-    return response.json()
-}).then(data =>{
-    
-    displayJob(data.results)
-})
-
-}
-
-
-const displayJob = function(jobs){
-    // clear area first
-     jobsEL.textContent="";
-
-    let jobEL=document.createElement("ul");
-   jobs.forEach(job=>{
-        
-        jobEL.innerHTML+= `
+  let jobEL = document.createElement("ul");
+  jobs.forEach((job) => {
+    jobEL.innerHTML += `
         <li>
         <div class="d-flex justify-content-between">
         <div> <h4>${job.title}</h4>
@@ -46,35 +38,34 @@ const displayJob = function(jobs){
             <p class="text-secondary">${job.description}</p>
          </div>
     </li>
-      `
-    });
+      `;
+  });
 
-    jobsEL.appendChild(jobEL)
-}
+  jobsEL.appendChild(jobEL);
+};
 const formSubmitHandler = function (event) {
-    event.preventDefault();
-    // get value from input element
-    var location = locationEL.value.trim();
-    var language = languageEL.value.trim();
-  
-    if (language && location) {
+  event.preventDefault();
+  // get value from input element
+  var location = locationEL.value.trim();
+  var language = languageEL.value.trim();
+
+  if (language && location) {
     // search job
-      searchJob(language,location);
+    searchJob(language, location);
 
     // save to local storage
-      saveToLocalStorage(language,location)
-      languageEL.value = "";
-      locationEL.value = "";
-    } else {
-      alert("Please enter a correct city name or location");
-    }
-  };
+    saveToLocalStorage(language, location);
+    languageEL.value = "";
+    locationEL.value = "";
+  } else {
+    alert("Please enter a correct city name or location");
+  }
+};
 
-const saveToLocalStorage = function(language,city){
+const saveToLocalStorage = function (language, city) {
   localStorage.setItem("searchedCity", city.toString());
   localStorage.setItem("searchedLanguage", language.toString());
-
-}
+};
 
 //----- FUNCTION- LOAD PAGE ------------------------------------------------
 
@@ -93,4 +84,4 @@ const loadPage = function () {
   };
 loadPage();
 
-searchBtn.addEventListener('submit',formSubmitHandler)
+searchBtn.addEventListener("submit", formSubmitHandler);

@@ -26,6 +26,12 @@ router.get("/:id", (req, res) => {
       "created_at",
       "updated_at",
     ],
+    include: [
+      {
+        model: Post,
+        attributes: ["id",  "title", "content"],
+      },
+    ],
   })
     .then((dbProfileData) => {
       if (!dbProfileData) {

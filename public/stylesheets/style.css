@@ -9,7 +9,9 @@
   --bgc-two: #467dc1;
   --bgc-three: #acd1ff;
   --bgc-light: #dce4eb;
+  --bgc-light1: #e7f3ff;
   --btn-color1: #3c74c4;
+  --btn-color2: #1876f2;
 }
 
 * {
@@ -33,10 +35,14 @@ ul {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: none !important;
   color: #3c74c4;
   /* font-weight: bold; */
   transition: color 0.1s;
+}
+h5 {
+  color: rgb(0, 158, 206) !important;
+  font-weight: bold !important;
 }
 
 a:hover {
@@ -148,6 +154,7 @@ header nav a {
 main {
   flex: 1;
   /* padding: 2% 14%; */
+  /* background-color: #F2F3F5; */
 }
 .welcome-container {
   background: rgb(2, 162, 222);
@@ -206,66 +213,34 @@ main {
 .post-list {
   margin: 2rem auto;
   padding: 0;
-  width: 70%;
+  width: 72%;
 }
-/* 
-.post {
-  margin-bottom: 2%;
-  line-height: 150%;
-  margin: 1rem;
+.post-comment-list {
+  margin: 2rem auto;
+  padding: 0 1rem;
+  width: 72%;
   border-radius: 0.5rem;
-  overflow: hidden;
-  box-shadow: 0px 0px 6px -1px rgb(137, 137, 137);
-  background-color: var(--bgc-light);
-  background-image: url('../assets/image/profile-bg-2.png');
- background-size: cover;
-
+  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); */
+  background-color: rgb(243, 243, 243);
+  background-color: #f2f3f5;
+  padding-bottom: 1rem;
+  border: 1px solid rgb(212, 212, 212);
 }
-.post .title {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.4rem 1rem;
-  
-}
-.post .title .title-info {
-  color: rgb(112, 112, 112) !important;
-  font-size: 0.7rem;
-  background-color: rgb(180, 220, 235);
-  border-radius:3rem;
-  padding:.1rem 1rem;
-}
-
-.title .title-heading a {
-  color: var(--btn-color1) !important;
-  color:rgb(255, 255, 255) !important;
-  font-size:1.1rem;
-  
-}
-.post .meta {
-  padding: 0.5rem 1rem;
-  border:1px solid rgb(189, 222, 235);
-  margin:.5rem;
-  border-radius: .4rem;
-}
-.post .meta p {
-  color:rgb(211, 234, 250);
-} */
-
 .post {
-  margin-bottom: 2%;
   line-height: 150%;
-  margin: 1rem;
+  margin: 1rem 0rem;
   border-radius: 0.5rem;
-  overflow: hidden;
-  box-shadow: 0px 0px 6px -1px rgb(137, 137, 137);
-  background-color: var(--bgc-light);
-  /* background-image: url("../assets/image/profile-bg-2.png"); */
+
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: rgb(247, 251, 255);
+  border: 1px solid rgb(212, 212, 212);
   background-size: cover;
+  padding: 0.8rem;
 }
 .post .title {
   display: flex;
   justify-content: space-between;
-  padding: 0.4rem 1rem;
+  padding: 0.3rem;
 }
 .post .title .title-info {
   color: rgb(112, 112, 112) !important;
@@ -280,8 +255,30 @@ main {
 }
 .post .meta {
   padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(230, 230, 230);
 }
 
+.btn-edit-post {
+  margin-top: -0.5rem;
+  color: rgb(29, 135, 177);
+  border-radius: 50%;
+  height: 2.3rem;
+  width: 2.3rem;
+  padding: 0.4rem 0.6rem;
+
+  align-items: center;
+  background-color: rgb(220, 228, 235);
+  /* background-color: rgb(253, 21, 21); */
+}
+.btn-edit-post i {
+  font-size: 1.1rem;
+  /* padding-right:.3rem;
+  margin-right:.4rem; */
+}
+.btn-edit-post:hover {
+  background-color: rgb(182, 201, 218);
+}
 /*  ====   Create  NEW POST */
 
 .create-new-post {
@@ -296,10 +293,12 @@ main {
   /* font-size:.9rem; */
 }
 .create-new-post button {
-  border-radius: 5rem;
-  padding: 0.2rem 1.4rem;
-  background-color: var(--bgc-light);
-  color: var(--btn-color1);
+  /* border-radius: 5rem; */
+  padding: 0.2rem 1.9rem;
+  background-color: var(--bgc-light1);
+  background-color: #c8dff5;
+  /* color: var(--btn-color1); */
+  color: #1876f2;
   font-size: 0.9rem;
   margin: 1rem 0;
   font-weight: bold;
@@ -315,20 +314,24 @@ main {
   font-size: 0.9rem;
   width: 60%;
 }
+
+/* ===== Your POSTS ========== */
 .your-posts {
-  margin: 1rem;
-  padding: 0;
+  margin: 2rem 0;
+  /* border:1px solid rgb(211, 211, 211);  */
+  box-shadow: 0 0 4px 1px rgba(164, 193, 199, 0.418);
+  padding: 3rem 1.3rem;
+  border-radius: 0.3rem;
 }
-.your-posts h2 {
-  margin-left: 1rem;
+.your-posts li {
+  margin-bottom: 1.3rem;
 }
-.edit-link {
-  display: block;
-  margin: 1rem;
-  font-size: 0.8rem;
-  font-weight: bold;
+.your-posts h5 {
+  margin-bottom: 2rem;
+  padding: 0 1.3rem;
 }
 
+/* =========== LOGIN - FORM =============== */
 .login-form {
   background-color: rgb(240, 245, 250);
   min-height: 65vh;
@@ -452,12 +455,17 @@ main {
   margin: 0;
 }
 
+/* =========================   COMMENT - FORM ================================ */
+
 .comment-form {
   margin-bottom: 5%;
   text-align: center;
+  border: 1px solid rgb(211, 210, 210);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 .comment-form input {
-  width: 70%;
+  width: 100%;
   background-color: white;
   border-radius: 15rem;
   padding: 1.3rem 1rem;
@@ -469,13 +477,14 @@ main {
 .comments {
   background-color: rgb(255, 255, 255);
   padding: 1rem;
-  margin: 0.3rem 1rem;
+  border: 1px solid rgb(211, 210, 210);
+
   border-radius: 0.5rem;
+
 }
 .comment {
   padding: 0.5rem;
   margin: 0.4rem 1rem;
-
   border-radius: 0.5rem;
   display: flex;
   justify-content: space-between;
@@ -490,13 +499,16 @@ main {
   align-items: center;
   text-align: center;
   color: white;
+  margin-right:.6rem;
 }
 
-.comment-form .comment-body {
-  width: 95%;
-  background-color: var(--primary-color);
+.comment-body {
+  width: 93%;
+  /* background-color: var(--primary-color); */
   border-radius: 0.5rem;
   padding: 1rem;
+  border: 1px solid rgb(211, 210, 210);
+  
 }
 
 .comment .meta {
@@ -544,6 +556,10 @@ main {
 .edit-form-container .delete-post-btn {
   color: rgb(250, 41, 41);
   background-color: rgb(255, 234, 234);
+}
+.edit-form-container .delete-post-btn:hover {
+  color: rgb(255, 220, 220);
+  background-color: rgb(243, 7, 7);
 }
 
 .edit-form-container input {
