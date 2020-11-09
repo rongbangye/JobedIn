@@ -64,7 +64,8 @@ router.get("/", withAuth, (req, res) => {
 router.get("/edit-profile/:id", (req, res) => {
   Profile.findAll({
     where: {
-      id: req.params.id,
+      // id: req.params.id,
+      user_id:req.session.user_id
     },
     attributes: [
       "first_name",

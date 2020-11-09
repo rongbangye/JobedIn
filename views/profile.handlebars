@@ -22,7 +22,9 @@
                     <p><span class="profile-list-icon"><i class="fas fa-user-graduate"></i></span>
                         <span class="profile-info-list">Attended :</span> {{profile.education}}
 
-                    </p>{{/if}}
+                    </p>
+                    {{/if}}
+
                     {{#if profile.skills}}
                     <p><span class="profile-list-icon"><i class="fas fa-tools"></i></span>
                         <span class="profile-info-list">Skills:</span> {{profile.skills}}
@@ -32,16 +34,21 @@
                     <p><span class="profile-list-icon"><i class="fas fa-industry"></i></span>
                         <span class="profile-info-list">Industry :</span> {{profile.industry}}
 
-                    </p>{{/if}}
+                    </p>
+                    {{/if}}
+
                     {{#if profile.experience}}
                     <p><span class="profile-list-icon"><i class="fab fa-buffer"></i></span>
                         <span class="profile-info-list">EXPERIENCE :</span>{{profile.experience}}
-                    </p>{{/if}}
+                    </p>
+                    {{/if}}
 
                     {{#if profile.interest}}
                     <p><span class="profile-list-icon"><i class="fas fa-certificate"></i></span>
                         <span class="profile-info-list">Interests :</span> {{profile.interest}}
-                    </p>{{/if}}
+                    </p>
+                    {{/if}}
+
                     {{/each}}
                 </div>
                 <div class="btn-edit-profile">
