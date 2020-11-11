@@ -1,4 +1,4 @@
-const proxyurl = "https://cors-anywhere.herokuapp.com/";
+// const proxyurl = "https://cors-anywhere.herokuapp.com/";
 const containerEl = document.querySelector(".job-container");
 const jobsEL = document.querySelector(".home-jobs");
 const searchBtn = document.querySelector("#search-form");
@@ -7,14 +7,25 @@ const languageEL = document.querySelector("#language");
 const {APP_ID,API_KEY} = config;
 
 var searchJob = function (language, city) {
-  const apiURL = `http://api.adzuna.com/v1/api/jobs/us/search/1?app_id=${APP_ID}&app_key=${API_KEY}&results_per_page=10&what=${language}%20developer&where=${city}&content-type=application/json`;
+  const apiURL = `/jobs`;
 
-  fetch(proxyurl + apiURL)
+  fetch(apiURL, {
+    method: "post",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      language,
+      city,
+    }),
+  })
     .then((response) => {
       return response.json();
     })
     .then((data) => {
       displayJob(data.results);
+      // console.log(data.results);
     });
 };
 
@@ -83,6 +94,7 @@ const loadPage = function () {
   }
   // if there was no searched country before search for USA
 };
+
 loadPage();
 
 searchBtn.addEventListener("submit", formSubmitHandler);
