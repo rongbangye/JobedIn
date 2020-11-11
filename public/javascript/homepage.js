@@ -4,7 +4,6 @@ const jobsEL = document.querySelector(".home-jobs");
 const searchBtn = document.querySelector("#search-form");
 const locationEL = document.querySelector("#location");
 const languageEL = document.querySelector("#language");
-const {APP_ID,API_KEY} = config;
 
 var searchJob = function (language, city) {
   const apiURL = `/jobs`;
@@ -43,7 +42,7 @@ const displayJob = function (jobs) {
               <p class="company-name">${job.company.display_name}</p>
         </div>
         
-        <div><a href="${job.redirect_url}" target="_blank">Apply</a></div>
+        <div><a href="${job.redirect_url}">Apply</a></div>
          
         </div>
         <div>
